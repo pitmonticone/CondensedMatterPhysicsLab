@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt,abstracton]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage{dirtytalk}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{appendix}
+\usepackage{nomencl}
+\usepackage{lmodern}
+\usepackage[nottoc]{tocbibind}
+\usepackage{xcolor}
+%\graphicspath{images/}
+\usepackage[margin = 3cm]{geometry}
+\usepackage{ragged2e} % good alignment
+\usepackage{hyperref}
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\hypersetup{colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan, 
+    citecolor=gray}
+
+%\DeclareGraphicsExtensions{.png,.pdf} % low-res (work in progress)
+%\DeclareGraphicsExtensions{.pdf,.png}  % high-res (final draft)
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs
+%\bibliographystyle{unstr}
+\setlength\parindent{0pt}
+\setlength{\parskip}{0.3em}
+\newcommand{\xmark}{\ding{55}}
+
+\renewcommand{\nomname}{List of Symbols}
+\renewcommand{\nompreamble}{The following list explains the symbols used within the body of the report.}
+
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{E}{Experimental Equipment}{%
+  \ifstrequal{#1}{C}{Computational Methods}{%
+  \ifstrequal{#1}{T}{Theoretical Concepts}{
+  \ifstrequal{#1}{P}{Physical Constants}{}}}}%
+]}
+
+
+\subject{CMP Lab Report} % Matter Physics, Physics, Chemical Physics ?
+\title{Zeeman Effect}
+\author{Group B9\footnote{Pietro Monticone , Claudio Moroni , Alberto Mosso , Riccardo Valperga.}}
+
+\renewcommand{\listfigurename}{Plots}
+\renewcommand{\listtablename}{Tables}
+\renewcommand{\nomname}{Nomenclature}
+
+
+\begin{document}
+\maketitle
+\makenomenclature
+\begin{abstract}
+something...
+\end{abstract}
+\clearpage
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\mbox{
+\nomenclature[C]{MC}{Monte Carlo}
+\nomenclature[E]{CB}{Cosmic Box}
+\nomenclature[P]{$m_e$}{Electronic Mass}
+\nomenclature[P]{$e$}{Electronic Charge}
+\nomenclature[T]{$V_{disc}$}{Discriminator Voltage}
+}
+\newpage
+\setlength{\columnsep}{27pt} 
+\begin{multicols}{2}
+\printnomenclature
+\end{multicols}
+\newpage
+
+
+%\bibliographystyle{unsrt}
+%\bibliography{biblio}
+\end{document}
