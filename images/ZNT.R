@@ -13,7 +13,7 @@ zn1_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICCA
                                      "blank", "numeric", "blank", "blank", 
                                      "blank", "blank", "blank", "blank", 
                                      "blank", "blank"))
-View(zn1_data)
+#View(zn1_data)
 
 zn2_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICCARDO]/data_TN/data_merges_xR/zn2_data.xls", 
                        col_types = c("blank", "blank", "numeric", 
