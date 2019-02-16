@@ -13,7 +13,7 @@ znl1_data <- read_excel("~/github/Lab-Struttura/images/longitudinale_normale [PI
                                         "blank", "numeric", "blank", "blank",
                                         "blank", "blank", "blank", "blank",
                                         "blank", "blank"))
-#View(znl1_data)
+View(znl1_data)
 
 
 
