@@ -2,7 +2,8 @@ library(readr)
 library(readxl)
 library(gdata)
 
-################### ZAL [ALBERTO] ######################
+################### ZAL [ALBERTO] ###################### 
+# (ZAT  p0= 0.119 pm 0.128 )
 
 
 zal0_data <- read_excel("~/github/Lab-Struttura/images/longitudinale_anomalo [ALBI]/data_LA/zal0_data.xls", 
@@ -179,6 +180,9 @@ A2[1] <- A2[1]+d[1]
 A2[2] <- A2[2]-a[1]
 A2[3] <- A2[3]+d[2]
 A2[4] <- A2[4]-a[2]
+A2[5] <- A2[5]+d[3]
+A2[6] <- A2[6]-a[3]
+
 
 A3 <- zal4_data$Area[12:17]
 A3[1] <- A3[1]+d[1]
