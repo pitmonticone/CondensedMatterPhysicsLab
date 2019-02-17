@@ -5,8 +5,9 @@ I1 <- c(0,1.02,2.03,3.00,4.04,4.99,6.02,7.00,8.02,8.48,9.01,9.51,10.04)   # A
 I2 <- c(9.50,8.97,8.49,7.00,6.05,4.98,4.02,3.00,2.00,1.00,0.00)
 I3 <- c(0.99,1.97,3.03,4.02,5.04,6.00,7.02,8.06,8.46,9.02,9.57,10.06)
 I4 <- c(9.57,9.00,8.52, 8.03, 6.94, 6.02, 5.03, 3.96, 3.06,2.06,1.09,0.00 )
-errI <- c(0.01)
-2
+errI <- c(0.02) #sensitivity > fluctuation
+
+
 # CAMPO MAGNETICO (5180 FW SELL)
 B1 <- c(0,0.071,0.140,0.205,0.277,0.342,0.408,0.471,0.535,0.563,0.588,0.612,0.636)  #T
 B2 <- c(0.613,0.590,0.566,0.478,0.416,0.348,0.282,0.215,0.145,0.078,0.009)
@@ -14,8 +15,17 @@ B3 <- c(0.072,0.138,0.208,0.276,0.345,0.409,0.475, 0.540,0.561,0.590,0.616,0.637
 B4 <- c(0.618,0.592,0.567, 0.542, 0.474, 0.414, 0.350, 0.277, 0.216,0.150,0.081,0.008)
 errB <- c(0.001)
 
-dIB <- data.frame(I1,errI,B1,errB, I2,errI, B2, errB, I3,errI, B3, errB, I4,errI, B4,errB)
-kable(dIB, "latex", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position","scale_down"))
+dIB1 <- data.frame(I1,errI,B1,errB)
+kable(dIB1, "latex", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position","scale_down"))
+
+dIB2 <- data.frame(I2,errI, B2, errB)
+kable(dIB2, "latex", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position","scale_down"))
+
+dIB3 <- data.frame(I3,errI, B3, errB)
+kable(dIB3, "latex", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position","scale_down"))
+
+dIB4 <- data.frame(I4,errI, B4, errB)
+kable(dIB2, "latex", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position","scale_down"))
 
 plot1 <- plot(I1,B1)
 plot2 <- plot(I2,B2)
@@ -98,6 +108,138 @@ Il8 <- mean(c(9.82,9.78))
 # stima errore con media e deviazione std della distribuzione
 
 #media pesata tra trasversale e longitudinale 
+
+
+######################################## ZEEMAN NORMALE #################################
+########## TRANSVERSE GEOMETRY
+# POLARIZATION: Exposure= 5000 ; Gain= 7   [zna=verticale=pi, znb=orizzontale==sigma]
+# NO POLARIZATION:  Exposure= 4000 ; Gain= 6 [zn]
+# SOFTWARE : Motic Image Plus 3.0
+
+It0 <- c(0.00)
+It1 <- mean(c(5.82,5.85))
+It2 <- mean(c(6.83,6.83))
+It3 <- mean(c(7.90,7.93))
+It4 <- mean(c(8.90,8.92))
+It5 <- mean(c(9.91,9.93))
+It6 <- mean(c(7.20,7.25))
+It7 <- mean(c(4.91,4.93))
+It8 <- mean(c(2.60,2.62))
+
+#GEOMETRIC PARAMETERS : radius (r,micron), diameter (d=2r), area (A,micron^2)
+C01 <- c(69.31,15091.12)
+C02 <- c(96.43,29210.04)
+C03 <- c(117.98,43725.06)
+C04 <- c(136.68,58692.26)
+C05 <- c(153.62,74139.89)
+
+########## LONGITUDINAL GEOMETRY
+# POLARIZATION: Exposure= 9000 ; Gain= 55   [znla=verticale=sigma+, znlb=orizzontale=sigma-]
+# NO POLARIZATION:  Exposure= 8000 ; Gain= 40 [znl]
+
+Il0 <- c(0.00)
+Il1 <- mean(c(2.67,2.70))
+Il2 <- mean(c(4.82,4.86))
+Il3 <- mean(c(5.89,5.92))
+Il4 <- mean(c(6.90,6.96))
+Il5 <- mean(c(7.85,7.86))
+Il6 <- mean(c(7.22,7.23))
+Il7 <- mean(c(8.82,8.83))
+Il8 <- mean(c(9.82,9.78))
+
+
+# PLOT delta/Delta \propto vs B 
+# stima errore con media e deviazione std della distribuzione
+
+#media pesata tra trasversale e longitudinale 
+
+
+
+######################################## ZEEMAN NORMALE #################################
+########## TRANSVERSE GEOMETRY
+# POLARIZATION: Exposure= 5000 ; Gain= 7   [zna=verticale=pi, znb=orizzontale==sigma]
+# NO POLARIZATION:  Exposure= 4000 ; Gain= 6 [zn]
+# SOFTWARE : Motic Image Plus 3.0
+
+It0 <- c(0.00)
+It1 <- mean(c(5.82,5.85))
+It2 <- mean(c(6.83,6.83))
+It3 <- mean(c(7.90,7.93))
+It4 <- mean(c(8.90,8.92))
+It5 <- mean(c(9.91,9.93))
+It6 <- mean(c(7.20,7.25))
+It7 <- mean(c(4.91,4.93))
+It8 <- mean(c(2.60,2.62))
+
+#GEOMETRIC PARAMETERS : radius (r,micron), diameter (d=2r), area (A,micron^2)
+C01 <- c(69.31,15091.12)
+C02 <- c(96.43,29210.04)
+C03 <- c(117.98,43725.06)
+C04 <- c(136.68,58692.26)
+C05 <- c(153.62,74139.89)
+
+########## LONGITUDINAL GEOMETRY
+# POLARIZATION: Exposure= 9000 ; Gain= 55   [znla=verticale=sigma+, znlb=orizzontale=sigma-]
+# NO POLARIZATION:  Exposure= 8000 ; Gain= 40 [znl]
+
+Il0 <- c(0.00)
+Il1 <- mean(c(2.67,2.70))
+Il2 <- mean(c(4.82,4.86))
+Il3 <- mean(c(5.89,5.92))
+Il4 <- mean(c(6.90,6.96))
+Il5 <- mean(c(7.85,7.86))
+Il6 <- mean(c(7.22,7.23))
+Il7 <- mean(c(8.82,8.83))
+Il8 <- mean(c(9.82,9.78))
+
+
+# PLOT delta/Delta \propto vs B 
+# stima errore con media e deviazione std della distribuzione
+
+#media pesata tra trasversale e longitudinale 
+
+
+######################################## ZEEMAN ANOMALO #################################
+########## TRANSVERSE GEOMETRY
+# POLARIZATION: Exposure= 7000 ; Gain= -57; Enhance =62/255;    [zaa=verticale=pi, zab=orizzontale==sigma]
+# NO POLARIZATION:  Exposure= 5000 ; Gain= -2; Enhance=48/255   [za]
+# SOFTWARE : Motic Image Plus 3.0
+
+It0 <- c(0.00)
+It1 <- mean(c(5.71,5.79))
+It2 <- mean(c(6.73,6.75))
+It3 <- mean(c(7.81,7.83))
+It4 <- mean(c(8.70,8.89))
+It5 <- mean(c(9.91,9.99))
+It6 <- mean(c(7.25,7.30))
+
+
+#GEOMETRIC PARAMETERS : radius (r,micron), diameter (d=2r), area (A,micron^2)
+
+########## LONGITUDINAL GEOMETRY
+# POLARIZATION: Exposure= 9000 ; Gain= 55   [znla=verticale=sigma+, znlb=orizzontale=sigma-]
+# NO POLARIZATION:  Exposure= 8000 ; Gain= 40 [znl]
+
+Il0 <- c(0.00)
+Il1 <- mean(c(7.30,7.31))
+Il2 <- mean(c(7.84,7.85))
+Il3 <- mean(c(8.30,8.33))
+Il4 <- mean(c(8.83,8.85))
+Il5 <- mean(c(9.39,9.44))
+Il6 <- mean(c(9.98, 9.99))
+
+
+
+# PLOT delta/Delta \propto vs B 
+# stima errore con media e deviazione std della distribuzione
+
+#media pesata tra trasversale e longitudinale 
+
+
+
+
+
+
 
 
 

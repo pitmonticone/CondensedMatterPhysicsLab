@@ -4,8 +4,6 @@ library(gdata)
 
 ################### ZNT [RICCARDO] ######################
 
-### Nell'array d12/11/4/15 A2 va dimezzato. 
-
 ###### ZNT1
 
 zn1_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICCARDO]/data_TN/data_merges_xR/zn1_data.xls", 
@@ -13,21 +11,21 @@ zn1_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICCA
                                      "blank", "numeric", "blank", "blank", 
                                      "blank", "blank", "blank", "blank", 
                                      "blank", "blank"))
-#View(zn1_data)
+View(zn1_data)
 
 zn2_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICCARDO]/data_TN/data_merges_xR/zn2_data.xls", 
                        col_types = c("blank", "blank", "numeric", 
                                      "blank", "numeric", "blank", "blank", 
                                      "blank", "blank", "blank", "blank", 
                                      "blank", "blank"))
-View(zn2_data)
+#View(zn2_data)
 
 zn3_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICCARDO]/data_TN/data_merges_xR/zn3_data.xls", 
                        col_types = c("blank", "blank", "numeric", 
                                      "blank", "numeric", "blank", "blank", 
                                      "blank", "blank", "blank", "blank", 
                                      "blank", "blank"))
-View(zn3_data)
+#View(zn3_data)
 
 zn4_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICCARDO]/data_TN/data_merges_xR/zn4_data.xls", 
                        col_types = c("blank", "blank", "numeric", 
@@ -64,22 +62,6 @@ zna8_data <- read_excel("~/github/Lab-Struttura/images/trasversale_normale [RICC
                                      "blank", "blank"))
 #View(zna8_data)
 
-
-###### ZNT3
-
-A1 <- zn3_data$Area[1:15]
-A2 <- zn3_data$Area[17:26]
-A3 <- zn3_data$Area[28:32]
-d15 <- c(A1[2]-A1[1],A1[3]-A1[2],A1[5]-A1[4],A1[6]-A1[5],A1[8]-A1[7],A1[9]-A1[8],A1[11]-A1[10],A1[12]-A1[11],A1[14]-A1[13],A1[15]-A1[14],(A2[2]-A2[1])/2,(A2[4]-A2[3])/2,(A2[6]-A2[5])/2,(A2[8]-A2[7])/2,(A2[10]-A2[9])/2)
-D3 <- c(A1[4]-A1[1],A1[5]-A1[2],A1[6]-A1[3],A1[7]-A1[4],A1[8]-A1[5],A1[9]-A1[6],A1[10]-A1[7],A1[11]-A1[8],A1[12]-A1[9],A2[3]-A2[1],A2[4]-A2[2],A2[5]-A2[3],A2[6]-A2[4],A2[7]-A2[5],A2[8]-A2[6],A2[9]-A2[7],A2[10]-A2[8],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3],A3[5]-A3[4])
-sD3 <- sd(D3)
-sd15 <- sd(d15)
-d15m <- mean(d15)
-D3m <- mean(D3)
-dD3 <- d15m/D3m
-sdD3 <- sqrt((sd15/D3m)^2+((sD3*d15m)/(D3m^2))^2) # 0.331 pm 0.403
-
-
 A1 <- zn1_data$Area[1:12]
 A2 <- zn1_data$Area[14:23]
 A3 <- zn1_data$Area[25:29]
@@ -90,7 +72,7 @@ sD1 <- sd(D1)
 d12m <- mean(d12)
 D1m <- mean(D1)
 dD1 <- d12m/D1m
-sdD1 <- sqrt((sd12/D1m)^2+((sD1*d12m)/(D1m^2))^2) # 0.037 pm 0.060
+sdD1 <- sqrt((sd12/D1m)^2+((sD1*d12m)/(D1m^2))^2) # 0.158 pm 0.010
 
 
 ###### ZNT2
@@ -119,7 +101,8 @@ sd15 <- sd(d15)
 d15m <- mean(d15)
 D3m <- mean(D3)
 dD3 <- d15m/D3m
-sdD3 <- sqrt((sd15/D3m)^2+((sD3*d15m)/(D3m^2))^2) # 0.331 pm 0.403
+sdD3 <- sqrt((sd15/D3m)^2+((sD3*d15m)/(D3m^2))^2) # 0.221 pm 0.031
+
 
 ###### ZNT4
 
@@ -133,7 +116,8 @@ sd15 <- sd(d15)
 d15m <- mean(d15)
 D4m <- mean(D4)
 dD4 <- d15m/D4m
-sdD4 <- sqrt((sd15/D4m)^2+((sD4*d15m)/(D4m^2))^2) # 0.313 pm 0.125
+sdD4 <- sqrt((sd15/D4m)^2+((sD4*d15m)/(D4m^2))^2) # 0.233 pm 0.025
+
 
 ###### ZNT5
 
@@ -147,8 +131,7 @@ sd15 <- sd(d15)
 d15m <- mean(d15)
 D5m <- mean(D5)
 dD5 <- d15m/D5m
-sdD5 <- sqrt((sd15/D5m)^2+((sD5*d15m)/(D5m^2))^2) # 0.348 pm 0.124
-
+sdD5 <- sqrt((sd15/D5m)^2+((sD5*d15m)/(D5m^2))^2) # 0.263 pm 0.034
 
 ###### ZNT6
 
@@ -176,7 +159,7 @@ sD7 <- sd(D7)
 d11m <- mean(d11)
 D7m <- mean(D7)
 dD7 <- d11m/D7m
-sdD7 <- sqrt((sd11/D7m)^2+((sD7*d11m)/(D7m^2))^2) # 0.174 pm 0.080
+sdD7 <- sqrt((sd11/D7m)^2+((sD7*d11m)/(D7m^2))^2) # 0.125 pm 0.023
 
 ###### ZNT8
 
@@ -189,4 +172,4 @@ sD8 <- sd(D8)
 d4m <- mean(d4)
 D8m <- mean(D8)
 dD8 <- d4m/D8m
-sdD8 <- sqrt((sd4/D8m)^2+((sD8*d4m)/(D8m^2))^2) # 0.123 pm 0.017
+sdD8 <- sqrt((sd4/D8m)^2+((sD8*d4m)/(D8m^2))^2) # 0.061 pm 0.009
