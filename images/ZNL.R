@@ -67,13 +67,13 @@ A1 <- znl1_data$Area[1:6] #come A2 ric
 A2 <- znl1_data$Area[7:9] # A3 ric
 A3 <- znl1_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)/(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)/(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.070 pm 0.004
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.070 pm 0.002
 
 
 ###### ZNL2
@@ -82,13 +82,13 @@ A1 <- znl2_data$Area[1:6] #come A2 ric
 A2 <- znl2_data$Area[7:9] # A3 ric
 A3 <- znl2_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)/(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)/(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.140 pm 0.005
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.140 pm 0.003
 
 ###### ZNL3
 
@@ -96,13 +96,13 @@ A1 <- znl3_data$Area[1:6] #come A2 ric
 A2 <- znl3_data$Area[7:9] # A3 ric
 A3 <- znl3_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)/(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)/(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.165 pm 0.005
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.165 pm 0.002
 
 ###### ZNL4
 
@@ -110,13 +110,13 @@ A1 <- znl4_data$Area[1:6] #come A2 ric
 A2 <- znl4_data$Area[7:9] # A3 ric
 A3 <- znl4_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.192 pm 0.006
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.192 pm 0.002
 
 ###### ZNL5
 
@@ -124,13 +124,13 @@ A1 <- znl5_data$Area[1:6] #come A2 ric
 A2 <- znl5_data$Area[7:9] # A3 ric
 A3 <- znl5_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)/(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)/(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.218 pm 0.006
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.218 pm 0.002
 
 
 ###### ZNL6
@@ -139,13 +139,13 @@ A1 <- znl6_data$Area[1:6] #come A2 ric
 A2 <- znl6_data$Area[7:9] # A3 ric
 A3 <- znl6_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)/(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)/(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.202 pm 0.018
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.202 pm 0.010
 
 ###### ZNL7
 
@@ -153,13 +153,13 @@ A1 <- znl7_data$Area[1:6] #come A2 ric
 A2 <- znl7_data$Area[7:9] # A3 ric
 A3 <- znl7_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)/(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)/(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.237 pm 0.012
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.237 pm 0.006
 
 ###### ZNL8
 
@@ -167,13 +167,13 @@ A1 <- znl8_data$Area[1:6] #come A2 ric
 A2 <- znl8_data$Area[7:9] # A3 ric
 A3 <- znl8_data$Area[10:13] # A3 ric
 d <- c(A1[2]-A1[1],A1[4]-A1[3],A1[6]-A1[5])/2
-sd <- sd(d)
+sd <- sd(d)/(sqrt(length(d)))
 D <- c(A1[3]-A1[1],A1[4]-A1[2],A1[5]-A1[3],A1[6]-A1[4],A2[2]-A2[1],A2[3]-A2[2],A3[2]-A3[1],A3[3]-A3[2],A3[4]-A3[3])
-sD <- sd(D)
+sD <- sd(D)/(sqrt(length(D)))
 dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
-sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.263 pm 0.018
+sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.263 pm 0.009
 
 
 
