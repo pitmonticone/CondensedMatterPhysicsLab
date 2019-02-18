@@ -8,11 +8,11 @@
 
 using namespace std;
 
-void znt(){
+void zal(){
 
-const int nmisure=8;
-double Imin[]={0.00,2.60,4.91,5.82,6.83,7.20,7.90,8.90,9.91};
-double Imax[]={0.00,2.62,4.93,5.85,6.83,7.25,7.93,8.92,9.93};
+const int nmisure=6;
+double Imin[]={7.30,7.84,8.30,8.83,9.39,9.98};
+double Imax[]={7.31,7.85,8.33,8.85,9.44,9.99};
 
 
 double ar[]={0.0672,0.00015};
@@ -20,12 +20,13 @@ double br[]={0.0074,0.0009};
 double ap[]={-0.00452101,5.085e-05};
 double bp[]={0.129709,0.000884};
 double cp[]={-0.200692,0.004895};
+
 double Im[nmisure];
 double sIm[nmisure];
 double B[nmisure];
 double sB[nmisure];
-double dDm[]={0.061,0.125,0.158,0.188,0.198,0.221,0.233,0.263};
-double sdDm[]={0.009,0.023,0.010,0.025,0.022,0.031,0.025,0.034};
+double dDm[]={0.052,0.064,0.084,0.143,0.133,0.130};
+double sdDm[]={0.028,0.032,0.056,0.010,0.050,0.041};
 
 
 for(int i = 0;i<nmisure;i++){
@@ -48,7 +49,6 @@ B[i]=ap[0]*pow(Im[i],2)+bp[0]*Im[i]+cp[0];
 sB[i]=sqrt(pow(pow(Im[i],2)*ap[1],2)+pow(((2*Im[i]*ap[0])+bp[0])*sIm[i],2)+pow(Im[i]*bp[1],2)+pow(cp[1],2));
 cout<<"Im = ("<<Im[i]<<"+-"<<sIm[i]<<") A "<<" -------- "<<"B[Im] = ("<<B[i]<<"+-"<<sB[i]<<") T "<<endl;
 }
-
 }
 
 
@@ -64,7 +64,7 @@ TGE->GetXaxis()->SetTitle("B [T]");
 TGE->GetYaxis()->SetTitle("d/D");
 TGE->Draw("AP");
 
-TF1 *func = new TF1("func","[0]*x + [1]",0,6.93);
+TF1 *func = new TF1("func","[0]*x + [1]",0,0.65);
 func->SetParameter(0,0.06);
 func->SetParameter(1,0);
 func->SetLineColor(2);
@@ -74,5 +74,5 @@ TGE->Fit("func","RM+S");
 cout << "Chi^2:" << func->GetChisquare() << ", number of DoF: " << func->GetNDF() << " (Probability: " << func->GetProb() << ")." << endl;
 cout << "--------------------------------------------------------------------------------------------------------" << endl;
 
-}
 
+}

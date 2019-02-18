@@ -5,16 +5,12 @@
 #include <TF1.h>
 #include <iomanip>
 #include <cmath>
-
 using namespace std;
 
-void znt(){
-
+void znl(){
 const int nmisure=8;
-double Imin[]={0.00,2.60,4.91,5.82,6.83,7.20,7.90,8.90,9.91};
-double Imax[]={0.00,2.62,4.93,5.85,6.83,7.25,7.93,8.92,9.93};
-
-
+double Imin[]={2.67,4.82,5.89,6.9,7.22,7.85,8.82,9.82};
+double Imax[] = {2.7,4.86,5.92,6.96,7.23,7.86,8.83,9.78};
 double ar[]={0.0672,0.00015};
 double br[]={0.0074,0.0009};
 double ap[]={-0.00452101,5.085e-05};
@@ -24,8 +20,8 @@ double Im[nmisure];
 double sIm[nmisure];
 double B[nmisure];
 double sB[nmisure];
-double dDm[]={0.061,0.125,0.158,0.188,0.198,0.221,0.233,0.263};
-double sdDm[]={0.009,0.023,0.010,0.025,0.022,0.031,0.025,0.034};
+double dDm[]={0.070,0.14,0.165,0.192,0.202,0.218,0.237,0.263};
+double sdDm[]={0.004,0.005,0.005,0.006,0.018,0.006,0.012,0.018};
 
 
 for(int i = 0;i<nmisure;i++){
@@ -48,8 +44,8 @@ B[i]=ap[0]*pow(Im[i],2)+bp[0]*Im[i]+cp[0];
 sB[i]=sqrt(pow(pow(Im[i],2)*ap[1],2)+pow(((2*Im[i]*ap[0])+bp[0])*sIm[i],2)+pow(Im[i]*bp[1],2)+pow(cp[1],2));
 cout<<"Im = ("<<Im[i]<<"+-"<<sIm[i]<<") A "<<" -------- "<<"B[Im] = ("<<B[i]<<"+-"<<sB[i]<<") T "<<endl;
 }
-
 }
+
 
 
 TCanvas *canvas = new TCanvas("canvas","dDm(B)",0,0,600,400);
