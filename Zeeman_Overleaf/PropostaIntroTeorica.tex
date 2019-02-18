@@ -1,0 +1,124 @@
+\documentclass[a4paper,12pt,abstracton]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{graphicx}
+%\usepackage{dirtytalk}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{appendix}
+\usepackage{nomencl}
+\usepackage{lmodern}
+\usepackage[nottoc]{tocbibind}
+\usepackage{xcolor}
+%\graphicspath{images/}
+\usepackage[margin = 2cm]{geometry}
+\usepackage{ragged2e} % good alignment
+\usepackage{hyperref}
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\hypersetup{colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan, 
+    citecolor=gray}
+
+%\DeclareGraphicsExtensions{.png,.pdf} % low-res (work in progress)
+%\DeclareGraphicsExtensions{.pdf,.png}  % high-res (final draft)
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs
+%\bibliographystyle{unstr}
+\setlength\parindent{0pt}
+\setlength{\parskip}{0.3em}
+\newcommand{\xmark}{\ding{55}}
+
+\renewcommand{\nomname}{List of Symbols}
+\renewcommand{\nompreamble}{The following list explains the symbols used within the body of the report.}
+
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{E}{Experimental Equipment}{%
+  \ifstrequal{#1}{C}{Computational Methods}{%
+  \ifstrequal{#1}{T}{Theoretical Concepts}{
+  \ifstrequal{#1}{P}{Physical Constants}{}}}}%
+]}
+
+
+\subject{CMP Lab Report} % Matter Physics, Physics, Chemical Physics ?
+\title{Zeeman Effect}
+\author{Group B9\footnote{Pietro Monticone , Claudio Moroni , Alberto Mosso , Riccardo Valperga.}}
+
+\renewcommand{\listfigurename}{Plots}
+\renewcommand{\listtablename}{Tables}
+\renewcommand{\nomname}{Nomenclature}
+
+
+\begin{document}
+\maketitle
+\makenomenclature
+\begin{abstract}
+something..
+\end{abstract}
+\clearpage
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\mbox{
+\nomenclature[C]{MC}{Monte Carlo}
+\nomenclature[E]{CB}{Cosmic Box}
+\nomenclature[P]{$m_e$}{Electronic Mass}
+\nomenclature[P]{$e$}{Electronic Charge}
+\nomenclature[T]{$V_{disc}$}{Discriminator Voltage}
+}
+\newpage
+\setlength{\columnsep}{27pt} 
+\begin{multicols}{2}
+\printnomenclature
+\end{multicols}
+\newpage
+\section{Theoretical Introduction}
+Zeemann effect is a phenomenon where the submission of a spectroscopic light source to a magnetic fields causes the splitting of the observed spectral lines. Because a spectral line is associated to an atomic energy level, such splitting is always related to a degeneracy breaking. In an atom, degeneracy is due to the orbital momentum l, its third component $m_l$, and the z-component of spin $m_s$ (s is fixed  because electrons are fermions, so $s=\frac{1}{2}$.\newline
+Normal Zeemann effect is observed when the total spins of the base and target level of the transition are zero.
+Anomalous Zeeman effect is instead detected when the spins of the base and target level of the transition are not zero.
+\subsection{Normal Zeemann effect}
+An external magnetic field $\vec{B}$ gives an energy contribution to each level
+\begin{equation}
+\Delta E = - \vec{\mu} \cdot \vec{B}
+\end{equation}
+Where $\vec{\mu}$ is the magnetic moment. We consider $\vec{B}$ parallel to the z-axis, so we are only interested in $\mu_z$. One finds: 
+\begin{equation}
+mu_z \equiv -\frac{e}{2m}L_z = -\frac{e}{2m}\hbar m_lg_l
+\end{equation}
+Where $g_l$ is a constant equal to 1.Thus:
+\begin{equation}
+\Delta E = - \mu_z B = \frac{e \hbar}{2m} m_l B = \mu_B m_l B
+\end{equation}
+Where $\mu_B$ is the Bohr's magneton, whose theoretical value is
+$\mu_B = $. Because $\Delta E$ depends on $m_l$, degeneracy in $m_l$ is broken and thus spectral lines split.
+\subsection{Anomalous Zeemann Effect}
+When spin is involved, the expression for $\vec{\mu}$ to use is 
+\begin{equation}
+\vec{\mu}=-\frac{eg_l}{2m} \vec{L}_J - \frac{eg_s}{2m} \vec{S}_J
+\end{equation}
+Where $\vec{L}_J$ and $ \vec{S}_J$ are the projections of $\vec{L}$ and $\vec{S}$ along the total angular momentum $\vec{J}:= \vec{L}+ \vec{S}$, and $g_s$ is about 2. One finds:
+\begin{equation}
+\vec{\mu} = -\frac{e}{2m}g_{jls}\vec{J}
+\end{equation}
+Where 
+\begin{equation}
+g_{jls}=\frac{3j(j+1)-l(l+1)+s(s+1)}{2j(j+1)}
+\end{equation}
+Pointing $\vec{B}$ along the z-axis, we have $\mu_z =-\frac{e \hbar}{2m}g_{jls}m_j=-\mu_B g_{jls}m_j$, thus
+\begin{equation}
+\Delta E = -\vec{\mu}\cdot \vec{B}= \mu_z B = \mu_Bg_{jls}m_j B
+\end{equation}
+When considering anomalous Zeemann effect, both spinorial and orbital degeneracy are broken, giving rise to even more splitting.
+
+
+%\bibliographystyle{unsrt}
+%\bibliography{biblio}
+\end{document}
