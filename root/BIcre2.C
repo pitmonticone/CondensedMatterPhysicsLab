@@ -20,15 +20,11 @@ for(int i = 0;i<nmisure;i++){
   sI[i]=0.02;
   sB[i]=0.001;
 }
-    
 
 TCanvas *canvas = new TCanvas("canvas","B(I)",0,0,600,400);
 canvas->SetFillColor(0);
 canvas->cd();
-    gStyle->SetPaperSize(10.,10.);
-    hpx->Draw("same");
-    gPad->Print("hpx.tex");
-    
+
 TGraphErrors *TGE = new TGraphErrors(nmisure,I,B,sI,sB);
 TGE->SetMarkerSize(0.6);
 TGE->SetMarkerStyle(21);

@@ -174,3 +174,15 @@ dm <- mean(d)
 Dm <- mean(D)
 dD <- dm/Dm
 sdD <- sqrt((sd/Dm)^2+((sD*dm)/(Dm^2))^2) # 0.263 pm 0.018
+
+
+
+# BOHR MAGNETON
+h <- 6.626070040*(10^(-34))
+c <- 299792458
+mn <- 1.4560
+t <- 0.003
+p <- 0.422
+errp <- 0.017
+mB <- (p*h*c)/(2*mn*t)
+errmB <- errp*(h*c)/(2*mn*t) # 9.595698e-24 pm 0.3865565e-24
