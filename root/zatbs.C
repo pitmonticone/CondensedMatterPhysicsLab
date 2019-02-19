@@ -8,11 +8,11 @@
 
 using namespace std;
 
-void zal(){
+void zatbs(){
 
 const int nmisure=6;
-double Imin[]={7.30,7.84,8.30,8.83,9.39,9.98};
-double Imax[]={7.31,7.85,8.33,8.85,9.44,9.99};
+double Imin[]={5.71,6.73,7.25,7.81,8.70,9.91};
+double Imax[]={5.79,6.75,7.30,7.83,8.89,9.99};
 
 
 double ar[]={0.0672,0.00015};
@@ -20,13 +20,16 @@ double br[]={0.0074,0.0009};
 double ap[]={-0.00452101,5.085e-05};
 double bp[]={0.129709,0.000884};
 double cp[]={-0.200692,0.004895};
-
+double dm[]={273.3318,364.5211988095,369.46945,387.4279875,476.2313602941,511.6038375};
+double Dm[]={4473.7978697368,4492.995351,4485.4394416667,4534.2369394231,4515.1752730769,4721.02548125};
+double sdm[]={8.66283137,20.7574578916,35.2988643417,12.7276052048,20.8456162243,23.9835375865};
+double sDm[]={35.4283334611,22.7803969221,16.8996739464,26.5406716106,48.3846808522,182.4243711224};
 double Im[nmisure];
 double sIm[nmisure];
 double B[nmisure];
 double sB[nmisure];
-double dDm[]={0.057,0.069,0.088,0.128,0.135,0.131};
-double sdDm[]={0.011,0.012,0.017,0.031,0.018,0.022};
+double dDm[nmisure];
+double sdDm[nmisure];
 
 
 for(int i = 0;i<nmisure;i++){
@@ -49,7 +52,12 @@ B[i]=ap[0]*pow(Im[i],2)+bp[0]*Im[i]+cp[0];
 sB[i]=sqrt(pow(pow(Im[i],2)*ap[1],2)+pow(((2*Im[i]*ap[0])+bp[0])*sIm[i],2)+pow(Im[i]*bp[1],2)+pow(cp[1],2));
 cout<<"Im = ("<<Im[i]<<"+-"<<sIm[i]<<") A "<<" -------- "<<"B[Im] = ("<<B[i]<<"+-"<<sB[i]<<") T "<<endl;
 }
+
+dDm[i]=dm[i]/Dm[i];
+sdDm[i]=sqrt(pow(sdm[i]/Dm[i],2)+pow((dm[i]*sDm[i])/(pow(Dm[i],2)),2));
+cout<<"dDm = ("<<dDm[i]<<"+-"<<sdDm[i]<<")"<<endl;
 }
+
 
 
 TCanvas *canvas = new TCanvas("canvas","dDm(B)",0,0,600,400);
@@ -64,7 +72,7 @@ TGE->GetXaxis()->SetTitle("B [T]");
 TGE->GetYaxis()->SetTitle("d/D");
 TGE->Draw("AP");
 
-TF1 *func = new TF1("func","[0]*x + [1]",0,0.7);
+TF1 *func = new TF1("func","[0]*x+[1]",0,6.93);
 func->SetParameter(0,0.06);
 func->SetParameter(1,0);
 func->SetLineColor(2);
@@ -74,5 +82,5 @@ TGE->Fit("func","RM+S");
 cout << "Chi^2:" << func->GetChisquare() << ", number of DoF: " << func->GetNDF() << " (Probability: " << func->GetProb() << ")." << endl;
 cout << "--------------------------------------------------------------------------------------------------------" << endl;
 
-
 }
+

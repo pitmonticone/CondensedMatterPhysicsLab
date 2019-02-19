@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void zal(){
+void zal2(){
 
 const int nmisure=6;
 double Imin[]={7.30,7.84,8.30,8.83,9.39,9.98};
@@ -25,8 +25,8 @@ double Im[nmisure];
 double sIm[nmisure];
 double B[nmisure];
 double sB[nmisure];
-double dDm[]={0.057,0.069,0.088,0.128,0.135,0.131};
-double sdDm[]={0.011,0.012,0.017,0.031,0.018,0.022};
+double dDm[]={0.048,0.066,0.088,0.115,0.131,0.105};
+double sdDm[]={0.005,0.003,0.012,0.016,0.015,0.015};
 
 
 for(int i = 0;i<nmisure;i++){
@@ -64,7 +64,7 @@ TGE->GetXaxis()->SetTitle("B [T]");
 TGE->GetYaxis()->SetTitle("d/D");
 TGE->Draw("AP");
 
-TF1 *func = new TF1("func","[0]*x + [1]",0,0.7);
+TF1 *func = new TF1("func","[0]*x +[1]",0,0.7);
 func->SetParameter(0,0.06);
 func->SetParameter(1,0);
 func->SetLineColor(2);
