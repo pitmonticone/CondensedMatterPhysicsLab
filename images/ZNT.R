@@ -179,10 +179,10 @@ h <- 6.626070040*(10^(-34))
 c <- 299792458
 mn <- 1.4560
 t <- 0.003
-p <- 0.435
-errp <- 0.040
+p <- 0.430
+errp <- 0.014
 mB <- (p*h*c)/(2*mn*t)
-errmB <- errp*(h*c)/(2*mn*t)  # 9.8913e-24 pm  0.9095448e-24
+errmB <- errp*(h*c)/(2*mn*t)  # 9.777607e-24 pm  0.3183407e-24
 
 # BOHR MAGNETON [Approximation Method]
 h <- 6.626070040*(10^(-34))
