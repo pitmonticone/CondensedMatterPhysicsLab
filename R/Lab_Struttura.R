@@ -237,6 +237,73 @@ Il6 <- mean(c(9.98, 9.99))
 
 
 
+################################## DATA ANALYSIS ###################################
+h <- 6.626070040*(10^(-34))
+c <- 299792458
+mn <- 1.4560
+ma <- 1.4519
+t <- 0.003
+
+# NORMAL COMPATIBILITY TEST 
+p <- 0.436
+errp <- 0.014
+Mnt <- (p*h*c)/(2*mn*t)
+dMnt <- errp*(h*c)/(2*mn*t)   # 9.914038e-24 pm  0.3183407e-24
+q <- 0.424
+errq <- 0.009
+Mnl <- (q*h*c)/(2*mn*t)
+dMnl <- errq*(h*c)/(2*mn*t) #  9.641175e-24 pm 0.2046476e-24
+
+Z_n <- (Mnt-Mnl)/sqrt(dMnt^2+dMnl^2) # 0.7210101
+
+# NORMAL WEIGHTED AVG 
+
+Mn <- c( ((Mnl)/((dMnl)^2) + (Mnt)/((dMnt)^2)) /((1/dMnl^2)+(1/dMnt^2))  ,   sqrt(dMnt^2 + dMnl^2)) # 9.720965e-24 pm 0.3784461e-25
+
+# NORMAL-THEORETICAL COMPATIBILITY
+
+ZnT <- (9.27*10^(-24)-Mn[1])/(Mn[2]) # -1.191623
+
+# ANOMALOUS COMPATIBILITY TEST 
+h <- 6.626070040*(10^(-34))
+c <- 299792458
+ma <- 1.4519
+t <- 0.003
+j <- 0.636
+errj <- 0.149
+i <- 0.196
+erri <- 0.019
+Mat <- (i*h*c)/(ma*t)
+dMat <- erri*(h*c)/(ma*t)  ## 8.93871e-24 pm 0.8665076e-24
+Mal <- (j*h*c)/(ma*t)
+dMal <- errj*(h*c)/(ma*t) # 
+
+Z_a <- (Mat-Mal)/sqrt(dMat^2+dMal^2) # 0.2991075
+
+# ZAL,approx.
+
+
+# ZAT,approx.
+f <- 0.096/0.590
+errnum <- 0.008
+errden <- 0.011
+errf <- sqrt((errnum/(0.590))^2+(0.096*errden/(0.590^2))^2)
+mB <- (f*h*c)/(ma*t)
+errmB <- errf*(h*c)/(ma*t)  # 7.420582e-24 pm  0.6336693e-24
+
+
+
+# ANOMALOUS AVG 
+
+
+
+# NORMAL ANOMALOUS AVG 
+
+# NORMAL ANOMALOUS AVG - THEORETICAL COMPATIBILITY
+
+
+
+
 
 
 
