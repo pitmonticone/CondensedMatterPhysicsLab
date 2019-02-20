@@ -311,3 +311,19 @@ i <- 0.136
 erri <- 0.127
 mB <- (p*h*c)/(ma*t) 
 errmB <- errp*(h*c)/(ma*t)  # 6.20237e-24 pm 5.791919e-24
+
+
+# DATA TABLE ZAL
+
+I <- c(7.305,7.845,8.315,8.84,9.415,9.985) 
+sI <- c(0.02,0.02,0.02,0.02,0.025,0.02)
+B <-  c(0.188,0.333,0.404,0.473,0.500,0.539)  
+sB <- c(0.009,0.009,0.010,0.010,0.011,0.011)
+dDm <- c(0.057,0.069,0.088,0.128,0.147,0.130)
+sdDm <- c(0.011,0.012,0.017,0.031,0.022,0.022)
+dZAL <- data.frame(I,sI,B,sB,dDm,sdDm)
+kable(dZAL, "latex", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position","scale_down"))
+
+
+
+
