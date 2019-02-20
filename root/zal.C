@@ -25,8 +25,8 @@ double Im[nmisure];
 double sIm[nmisure];
 double B[nmisure];
 double sB[nmisure];
-double dDm[]={0.057,0.069,0.088,0.128,0.135,0.131};
-double sdDm[]={0.011,0.012,0.017,0.031,0.018,0.022};
+double dDm[]={0.057,0.069,0.088,0.128,0.147,0.130};
+double sdDm[]={0.011,0.012,0.017,0.031,0.022,0.022};
 
 
 for(int i = 0;i<nmisure;i++){
