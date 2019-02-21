@@ -37,18 +37,10 @@ print(linearMod)
 
 
 I5 <- c(4.20)
-Bl5 <- c(0.285,0.278,0.248)   #T
-Br5 <-  c(0.285,0.278,0.247)
-Bc5 <- c(0.285)
 I6 <- c(4.13) # scesa a 4.07
 Bu6 <- c(0.283,0.285,0.233)
 Bd6 <- c(0.282,0.279,0.262)
 Bc6 <- c(0.282)
-errBl <- c()
-errBr <- c()
-errBc <- c()
-errBu <- c()
-errBd <- c()
 dx <- c(2.95, 3.125)   #mm
 errdx <- c(0.035,0.035) #mm
 
@@ -59,12 +51,32 @@ Y <-  c(-10.225,-7.1,-4.15, 0, 4.15,7.1,10.225)
 plotBX <- plot(X,BX)
 plotBY <- plot(Y,BY)
 
-ggplot(data.frame(X,BX),aes(x,y))+geom_point()
+ggplot(data.frame(X,BX),aes(x,B))+geom_point()
 ggplot(data.frame(Y,BY))
 
 v_lr <- 0.007
 v_ud <- max(BY)-min(BY)
 v <- sum(v_lr,v_ud)/2
+
+
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+
+I <- c(0) 
+X <-  c(-10.225,-7.1,-4.15, 0, 4.15,7.1,10.225)
+BX <- c(0.248,0.278,0.285,0.285,0.285, 0.278,0.247)
+ggplot(data.frame(X,BX),aes(X,BX))+geom_point()
+Y <-  c(-10.225,-7.1,-4.15, 0, 4.15,7.1,10.225)
+BY <- c(0.262,0.279,0.282,0.282,0.283,0.285,0.233)
+ggplot(data.frame(Y,BY),aes(Y,BY))+geom_point()
+
+
+Ddis <- data.frame(I,X,BX,Y,BY)
+kable(Ddis, "latex", booktabs = T) %>% kable_styling(latex_options = c("striped", "hold_position","scale_down"))
+
+
+
 
 ######################################## ZEEMAN NORMALE #################################
 ########## TRANSVERSE GEOMETRY
