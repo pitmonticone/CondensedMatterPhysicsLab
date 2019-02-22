@@ -258,23 +258,22 @@ t <- 0.003
 
 # NORMAL COMPATIBILITY TEST 
 p <- 0.436
-errp <- 0.014
+errp <- 0.040
 Mnt <- (p*h*c)/(2*mn*t)
-dMnt <- errp*(h*c)/(2*mn*t)   # 9.914038e-24 pm  0.3183407e-24
-q <- 0.424
-errq <- 0.009
+dMnt <- errp*(h*c)/(2*mn*t)   # 9.914038e-24 pm  0.9095448e-24
+q <- 0.425
+errq <- 0.039
 Mnl <- (q*h*c)/(2*mn*t)
-dMnl <- errq*(h*c)/(2*mn*t) #  9.641175e-24 pm 0.2046476e-24
+dMnl <- errq*(h*c)/(2*mn*t) #  9.663913e-24 pm 0.8868062e-24
 
-Z_n <- (Mnt-Mnl)/sqrt(dMnt^2+dMnl^2) # 0.7210101
+Z_n <- (Mnt-Mnl)/sqrt(dMnt^2+dMnl^2) # 0.1969
 
 # NORMAL WEIGHTED AVG 
 
-Mn <- c( ((Mnl)/((dMnl)^2) + (Mnt)/((dMnt)^2)) /((1/dMnl^2)+(1/dMnt^2))  ,   sqrt(dMnt^2 + dMnl^2)) # 9.720965e-24 pm 0.3784461e-25
-
+Mn <- c( ((Mnl)/((dMnl)^2) + (Mnt)/((dMnt)^2)) /((1/dMnl^2)+(1/dMnt^2))  ,   sqrt(dMnt^2 + dMnl^2)) # 9.785810e-24 pm 1.270314e-24
 # NORMAL-THEORETICAL COMPATIBILITY
 
-ZnT <- (9.27*10^(-24)-Mn[1])/(Mn[2]) # -1.191623
+ZnT <- (9.27*10^(-24)-Mn[1])/(Mn[2]) # -0.4060495
 
 # ANOMALOUS COMPATIBILITY TEST 
 h <- 6.626070040*(10^(-34))
