@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt,abstracton]{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
+\usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{pifont}% http://ctan.org/pkg/pifont
@@ -60,7 +61,7 @@
 \maketitle
 \makenomenclature
 \begin{abstract}
-This experiment examined the normal and anomalous Zeeman effect with the aim of calculating the Bohr magneton by fitting the energy gap between spectral lines of a cadmium lampas surrounded in a magnetic field, as a function of the magnitude of the magnetic field. In the first section, the magnet calibration and the procedure adopted to test the uniformity of the magnetic field, are described. Regarding the former, we expected the magnetic field to vary almost linearly with the current since we worked with soft ferromagnets. For what concern the latter, we have made sure that for small movement in the region occupied by the cadmium lamp, the magnitude of the magnetic field did not vary substantially. Lastly, with a CCD camera and with the help of a polarizing filters and a retarding lamina, several images of the splitted spectral lines have been taken in several different configurations. The configurations depended on the longitudinal or traversal orientation of the magnets compared to the optical axe of the experimental apparatus; and the different configuration of the polarizing filters placed along the light path. The results are four estimates of the Bohr magneton that has been compared with the theoretical value.
+This experiment examined the normal and anomalous Zeeman effect with the aim of calculating the Bohr magneton by fitting the energy gap between spectral lines of a cadmium lamp immersed in a magnetic field, as a function of its magnitude. The first section concerns the magnet calibration and the procedure we adopted to test the magnetic field homogeneity. As far as the former is concerned, we expected the magnetic field to vary almost linearly with the current since we worked with soft ferromagnets. Regarding the latter, we have made sure that for small displacements in the region occupied by the cadmium lamp, the magnitude of the magnetic field did not vary substantially. Lastly, after the global experimental apparatus has been endowed with polarizing filters, a CCD camera and a retarding lamina, several images of the splitted spectral lines have been taken in various states depending from the chosen orientation (longitudinal or traversal) of the magnets with respect to the optical axe and the configuration of the polarizing filters placed along the light path. The results consist of four estimates of the Bohr magneton and the relevant compatibility tests .
 \end{abstract}
 \clearpage
 \tableofcontents
@@ -80,6 +81,40 @@ This experiment examined the normal and anomalous Zeeman effect with the aim of 
 \printnomenclature
 \end{multicols}
 \newpage
+
+\section{Introduction}
+\subsection{Theoretical Introduction}
+\subsection{Experimental Introduction}
+\section{Calibration Curve}
+
+\section{Magnetic Field Homogeneity}
+
+
+\section{Normal Zeeman Effect}
+
+\subsection{Data Collection}
+%template sentences
+The dataset has been collected and reported in \hyperref[table:boh]{Table \ref*{table:boh}}. \newline 
+
+The measures has been collected and $X$ values have been calculates as displayed in \hyperref[table:znl]{Table \ref*{table:znl}}.
+
+\subsection{Data Analysis \& Visualization}
+The dataset has been fit with the function $$\epsilon(HV)=\frac{\boldsymbol{p_0}}{1+e^{\frac{\boldsymbol{p_1}-HV}{\boldsymbol{p_2}}}}$$
+and plotted in \hyperref[fig:e(V)fal]{Figure \ref*{fig:e(V)fal}} and \hyperref[fig:e(V)fgl]{ \ref*{fig:e(V)fgl}}  together with the fit parameters $\boldsymbol{p_0}$, $\boldsymbol{p_1}$, $\boldsymbol{p_2}$ .
+\section{Anomalous Zeeman Effect}
+
+
+\subsection{Data Collection}
+%template sentences
+The dataset has been collected and reported in \hyperref[table:boh]{Table \ref*{table:boh}}. \newline 
+
+The measures has been collected and $X$ values have been calculates as displayed in \hyperref[table:znl]{Table \ref*{table:znl}}.
+
+\subsection{Data Analysis \& Visualization}
+The dataset has been fit with the function $$\epsilon(HV)=\frac{\boldsymbol{p_0}}{1+e^{\frac{\boldsymbol{p_1}-HV}{\boldsymbol{p_2}}}}$$
+and plotted in \hyperref[fig:e(V)fal]{Figure \ref*{fig:e(V)fal}} and \hyperref[fig:e(V)fgl]{ \ref*{fig:e(V)fgl}}  together with the fit parameters $\boldsymbol{p_0}$, $\boldsymbol{p_1}$, $\boldsymbol{p_2}$ .
+
+\section{Conclusions}
 
 
 %\bibliographystyle{unsrt}
