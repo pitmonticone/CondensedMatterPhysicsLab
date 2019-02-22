@@ -29,8 +29,8 @@ TGraphErrors *TGE = new TGraphErrors(nmisure,I,B,sI,sB);
 TGE->SetMarkerSize(0.6);
 TGE->SetMarkerStyle(21);
 TGE->SetTitle("B(I)");
-TGE->GetXaxis()->SetTitle("I(A)");
-TGE->GetYaxis()->SetTitle("B(T)");
+TGE->GetXaxis()->SetTitle("I [A]");
+TGE->GetYaxis()->SetTitle("B [T]");
 TGE->Draw("AP");
 
 TF1 *func = new TF1("func","[0]*x+[1]",0,7);

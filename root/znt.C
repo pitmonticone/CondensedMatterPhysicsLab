@@ -41,11 +41,19 @@ sIm[i]=(Imax[i]-Imin[i])/2.;
 if(Im[i]<=7){
 B[i]=ar[0]*Im[i]+br[0];
 sB[i]=sqrt(pow(Im[i]*ar[1],2)+pow(sIm[i]*ar[0],2)+pow(br[1],2));
+
+if(sB[i]< 0.1035087719*B[i])
+sB[i]=0.1035087719*B[i];
+
 cout<<"Im = ("<<Im[i]<<"+-"<<sIm[i]<<") A "<<" -------- "<<"B[Im] = ("<<B[i]<<"+-"<<sB[i]<<") T "<<endl;
 }
 else{
 B[i]=ap[0]*pow(Im[i],2)+bp[0]*Im[i]+cp[0];
 sB[i]=sqrt(pow(pow(Im[i],2)*ap[1],2)+pow(((2*Im[i]*ap[0])+bp[0])*sIm[i],2)+pow(Im[i]*bp[1],2)+pow(cp[1],2));
+
+if(sB[i]< 0.1035087719*B[i])
+sB[i]=0.1035087719*B[i];
+
 cout<<"Im = ("<<Im[i]<<"+-"<<sIm[i]<<") A "<<" -------- "<<"B[Im] = ("<<B[i]<<"+-"<<sB[i]<<") T "<<endl;
 }
 
