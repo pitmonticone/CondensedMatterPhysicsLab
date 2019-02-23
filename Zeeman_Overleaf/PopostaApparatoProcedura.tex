@@ -81,7 +81,7 @@ This experiment examined the normal and anomalous Zeeman effect with the aim of 
 The apparatus is composed of two ferromagnetic-core electromagnetic expansions connected to a current generator, an amperometer ***insert amperometer type NO*** and a magnetometer ***insert magnetomenter name NO***.
 \subsubsection{Procedure}
 The first goal is to extrapolate from a series of measurements a B(I) relation, where B is the magnetic field and I the current flowing through the expansions. 
-Using the following circuit ***footnote per capacità di sicurezza***:
+Using the following circuit \footnote{The capacity C is large and it is there for safety reasons, should one accidentally induce a short-circuit.}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[trim=3cm 8cm 2.5cm 10cm,clip,width=7.5cm,keepaspectratio]{circuito1.pdf} 
@@ -98,21 +98,12 @@ defined $$\delta = r^2_{n,a}-r^2_{n,b}$$ and $$\Delta = r^2_{n+1,a}-r^2_{n,a}$$ 
 \Delta E  = \frac{hc}{2\mu t} \frac{\delta}{\Delta}
 \end{equation}
  where $\mu$ is the refracive index of the interferometer and t is its thickness. So one is able to calculate $\Delta E$ from the images acquired form the CCD camera.
-
 \subsubsection{Procedure} \label{subsec:1}
 The experimental procedures followed to observe the normal zeemann effect and the anomalous one were similar. The magnets could be rotated, giving rise to the possibility of perpendicular and longitudinal configurations (orientations are referred to the optical bench axis). When considering the former, output light was linearly polarized (one could choose to observe the 2 linear polarizations by rotating the axis of the polarizer, no retarding lamina needed); the latter returned circularly polarized light: the lamina was used in combinations with the polarizer. It is to be said that in longitudinal configuration a light component, namely the one that would have polarization parallel to propagation direction, disappeared.\newline
-Wavelength $643.847 nm$ corresponding to $3 ^{1}D_{2} \longrightarrow 2 ^{1}P_{1}$  transition was selected to observe normal zeeman effect, while wavelength $508.588 nm$ corresponding to $3 ^3S_1 \longrightarrow 2 ^3P_2$ was selected to observe the anomalous one. \newline
-Measurements were taken by varying the current, and at each value of current three snapshots of the CCD were taken: the first depicting all lines, the second and the third were retrieved after inserting the polarizer and selecting one polarization and the other. This was executed for both the normal and anomalous zeemann effect in transverse and longitudinal configurations.\newline
-Thus for each value of current (i.e. for each value of magnetic field extrapolated from the B-I curve one got before) we had many values of $\delta \text{ and } \Delta $ (all we could get form the three CCD snapshots), whose averages were to be used to get $\Delta E$ from \ref{eq:1}.
+Wavelength $643.847 nm$ corresponding to $3 ^{1}D_{2} \longrightarrow 2 ^{1}P_{1}$  transition was selected to observe normal zeeman effect, while wavelength $508.588 nm$ corresponding to $3 ^3S_1 \longrightarrow 2 ^3P_2$ was chosen to observe the anomalous one. \newline
+At each value of the current flowing through the electromagnets three snapshots (diffractograms) of the CCD were taken: the first depicting all lines, the second and the third were retrieved after inserting the polarizer and selecting one polarization and the other. This was executed for both the normal and anomalous settings, in transverse and longitudinal configurations.\newline
+Thus for each value of current (i.e. for each value of magnetic field extrapolated from the B-I curve one got before) we had many values of $\delta \text{ and } \Delta $ (all we could get form the three CCD snapshots), whose averages were to be used to get $\Delta E$ from \ref{eq:1}. Measures of $\delta$ and $\Delta$ were taken on diffractograms using Motic Images Plus 3.0 software.
 Thus one ends up with four linear fits of $\Delta E \text{ vs } B$, from which we could get four estimates of $\mu_B$, that were then compared, averaged and compared with the theoretical value. According to $g_{jls} , \; m_l \text{ and } m_j$ values, we used $\Delta E = \mu_B B$ to fit normal zeemann effect data, and $\Delta E =\frac{1}{2} \mu_B B$ for the anomalous one.
-  
-\setlength{\columnsep}{27pt} 
-\begin{multicols}{2}
-\printnomenclature
-\end{multicols}
-\newpage
-
-
 %\bibliographystyle{unsrt}
 %\bibliography{biblio}
 \end{document}
