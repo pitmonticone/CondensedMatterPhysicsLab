@@ -20,6 +20,7 @@
 \usepackage{ragged2e} % good alignment
 \usepackage{hyperref}
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{circuitikz}
 \hypersetup{colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
@@ -59,6 +60,7 @@
 \begin{document}
 \maketitle
 \makenomenclature
+
 \begin{abstract}
 This experiment examined the normal and anomalous Zeeman effect with the aim of calculating the Bohr magneton by fitting the energy gap between spectral lines of a cadmium lampas surrounded in a magnetic field, as a function of the magnitude of the magnetic field. In the first section, the magnet calibration and the procedure adopted to test the uniformity of the magnetic field, are described. Regarding the former, we expected the magnetic field to vary almost linearly with the current since we worked with soft ferromagnets. For what concern the latter, we have made sure that for small movement in the region occupied by the cadmium lamp, the magnitude of the magnetic field did not vary substantially. Lastly, with a CCD camera and with the help of a polarizing filters and a retarding lamina, several images of the splitted spectral lines have been taken in several different configurations. The configurations depended on the longitudinal or traversal orientation of the magnets compared to the optical axe of the experimental apparatus; and the different configuration of the polarizing filters placed along the light path. The results are four estimates of the Bohr magneton that has been compared with the theoretical value.
 \end{abstract}
@@ -84,15 +86,15 @@ The first goal is to extrapolate from a series of measurements a B(I) relation, 
 Using the following circuit \footnote{The capacity C is large and it is there for safety reasons, should one accidentally induce a short-circuit.}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[trim=3cm 8cm 2.5cm 10cm,clip,width=7.5cm,keepaspectratio]{circuito1.pdf} 
-\caption{http://www.partsim.com/simulator (vi piace?)}
+\includegraphics[trim=0cm 0cm 0cm 0cm,clip,width=7.5cm,keepaspectratio]{circuito.pdf} 
+\caption{circuital scheme used}
 \end{center} 
 \end{figure}
 The current has been varied about 1A stepwise (read on the amperometer) and the magnetic field measured in the middle of the expansions. The current sequences $0A \longrightarrow 10A \longrightarrow 0A \longrightarrow 10A$ were performed.
 Then, by choosing a specific current value, the magnetic field has been measured at different positions between the expansions. This was needed on order to assign a more precise uncertainty to the values of B.
 \subsection{Zeemann Effect}
 \subsubsection{Experimental apparatus}
-An optical bench featuring a cadmium spectroscopic light source inserted between the electromagnets discussed above, a diaphragm, a Fabry-Perot interferometer, a wavelength filter, a polarizer, a retarding lamina and A CCD camera has been used. A particular wavelength $\lambda$ interval of the light coming from the source was selected via the filter before entering the interferometer. The Fabry-Perot interferometer diffracted an input wavelength in a series of circular spectral lines. As the filter acts on an interval of $\lambda$,we could observe the splitting of a wavelength into two/three (normal logitudinal/transverse effect : see \ref{subsec:1}) or six/nine (longitudinal/transverse anomalous), without dealing with extra lines. The Fabry-Perot interferometer main characteristic is the following:\newline
+An optical bench featuring a cadmium spectroscopic light source inserted between the electromagnets discussed above, a diaphragm, a Fabry-Perot interferometer, a wavelength filter, a polarizer, a retarding lamina and A CCD camera has been used. A particular wavelength $\lambda$ interval of the light coming from the source was selected via the filter before entering the interferometer. Because of the functioning of the Fabry-Perot interferometer an input wavelength is diffracted in a series of circular spectral lines. As the filter acts on an interval of $\lambda$,we could observe the splitting of a wavelength into two/three (normal logitudinal/transverse effect : see \ref{subsec:1}) or six/nine (longitudinal/transverse anomalous), without dealing with extra lines. The Fabry-Perot interferometer main characteristic is the following:\newline
 defined $$\delta = r^2_{n,a}-r^2_{n,b}$$ and $$\Delta = r^2_{n+1,a}-r^2_{n,a}$$  where $r_{n,a}$ is the radius of the n-th order spectral line corresponding to the wavelength a, we have that $\delta$ and $\Delta$ are approximately constant with respect to n and $\lambda$ when $a\simeq b$. Moreover, by geometric means, one finds that 
 \begin{equation} \label{eq:1}
 \Delta E  = \frac{hc}{2\mu t} \frac{\delta}{\Delta}
