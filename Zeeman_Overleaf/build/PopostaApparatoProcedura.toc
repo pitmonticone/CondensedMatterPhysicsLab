@@ -1,7 +1,0 @@
-\contentsline {section}{\numberline {1}Experimental Apparata and Procedures}{3}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}B-I curve retrival and Magnetic Field Uniformity check}{3}{subsection.1.1}% 
-\contentsline {subsubsection}{\numberline {1.1.1}Experimental apparatus}{3}{subsubsection.1.1.1}% 
-\contentsline {subsubsection}{\numberline {1.1.2}Procedure}{3}{subsubsection.1.1.2}% 
-\contentsline {subsection}{\numberline {1.2}Zeemann Effect}{5}{subsection.1.2}% 
-\contentsline {subsubsection}{\numberline {1.2.1}Experimental apparatus}{5}{subsubsection.1.2.1}% 
-\contentsline {subsubsection}{\numberline {1.2.2}Procedure}{5}{subsubsection.1.2.2}% 

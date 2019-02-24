@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt,abstracton]{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
+\usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{pifont}% http://ctan.org/pkg/pifont
@@ -37,37 +38,19 @@
 \renewcommand{\nomname}{List of Symbols}
 \renewcommand{\nompreamble}{The following list explains the symbols used within the body of the report.}
 
-\usepackage{etoolbox}
-\renewcommand\nomgroup[1]{%
-  \item[\bfseries
-  \ifstrequal{#1}{E}{Experimental Equipment}{%
-  \ifstrequal{#1}{C}{Computational Methods}{%
-  \ifstrequal{#1}{T}{Theoretical Concepts}{
-  \ifstrequal{#1}{P}{Physical Constants}{}}}}%
-]}
 
-
-\subject{CMP Lab Report} % Matter Physics, Physics, Chemical Physics ?
-\title{Zeeman Effect}
-\author{Group B9\footnote{Pietro Monticone , Claudio Moroni , Alberto Mosso , Riccardo Valperga.}}
-
-\renewcommand{\listfigurename}{Plots}
-\renewcommand{\listtablename}{Tables}
-\renewcommand{\nomname}{Nomenclature}
 
 
 \begin{document}
-\maketitle
-\makenomenclature
-\newpage
-\section{Magnetic Field Uniformity check}
-As stated in the introduction, one has to check quantitatively whether the magnetic field between the expansion is uniform, in order to associate to it a proper uncertainty. We took 5 measures of $B$ between the expansions along a horizontal diameter and 5 along a vertical one.\newline
-The horizontal data collected are:
+
+\section{Magnetic Field Homogeneity Test}
+As anticipated in the \hyperref[sec:Intro]{Introduction}, in order to assign a proper uncertainty to the magnitude of the magnetic field $B$, it is necessary to evaluate its uniformity between the expansions. Therefore we took five measures of $B$ along a chosen horizontal diameter $x$, which have been reported in \hyperref[table:disX]{Table \ref*{table:disX}} and other five along the vertical $y$ reported in \hyperref[table:disY]{Table \ref*{table:disY}}. The relevant scatterplots have been displayed in \hyperref[fig:disX]{Figure \ref*{fig:disX}} and \hyperref[fig:disY]{ \ref*{fig:disY}} respectively.
+
 \begin{table}[H]
 \centering
 \caption{}
-\label{disX}
-\resizebox{10cm}{!}{
+\label{table:disX}
+\resizebox{11cm}{!}{
 \begin{tabular}{ccc}
 \toprule
 $I\;[A]$ & $x$ [mm] & $B\;[T]$       \\
@@ -85,17 +68,17 @@ $I\;[A]$ & $x$ [mm] & $B\;[T]$       \\
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[trim=3cm 15cm 3cm 3cm, clip,height=9cm,keepaspectratio]{MagneticDishomogeneity.pdf}
+\includegraphics[trim=3cm 16.25cm 3cm 3cm, clip,height=9cm,keepaspectratio]{plots/MagneticDishomogeneity.pdf}
 \end{center}
+\caption{}
+\label{fig:disX}
 \end{figure}
 
-Because the spectroscopic lamp was taller than larger, only the first four measures around the central position have been taken into account to evaluate the horizontal uncertainty. This has been calculated as the maximum half-dispersion.$$MHD_{hor}=0.007 \; T$$
-The vertical uncertainty has been computed as the maximum half-dispersion again, but this time we considered all measurements:
 \begin{table}[H]
 \centering
 \caption{}
-\label{disY}
-\resizebox{10cm}{!}{
+\label{table:disY}
+\resizebox{8cm}{!}{
 \begin{tabular}{ccc}
 \toprule
 $I\;[A]$ & $y$ [mm] & $B\;[T]$       \\
@@ -113,26 +96,32 @@ $I\;[A]$ & $y$ [mm] & $B\;[T]$       \\
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[trim=3cm 4cm 3cm 15cm, clip,height=9cm,keepaspectratio]{MagneticDishomogeneity.pdf}
+\includegraphics[trim=3cm 4cm 3cm 15cm, clip,height=7cm,keepaspectratio]{plots/MagneticDishomogeneity.pdf}
 \end{center}
+\caption{}
+\label{fig:disY}
 \end{figure}
-$$MHD_{ver}=0.052 \; T$$
-An average of the two half-dispersion has been made, and the relative error (with respect to the maximum measurement 0.285 T) computed:
+
+Since the spectroscopic lamp was taller than larger, in order to evaluate the uncertainty of the magnetic field along the $x$ coordinate we have considered only the first four measures around the central position, while to evaluate it along the $y$ coordinate we have considered all the measurements and calculated the maximum semi-dispersions $\Delta_B^x=0.007 \; T$ and $\Delta_B^y=0.052 \; T$ .
+
+Then we have computed the average of the semi-dispersions and the relative error with respect to the maximum value of $B=0.285\;T$, whose results have been reported in \hyperref[table:semi]{ Table \ref*{table:semi}}.
 
 \begin{table}[H]
 \centering
 \caption{}
-\label{disY}
-\resizebox{10cm}{!}{
+\label{table:semi}
+\resizebox{8cm}{!}{
 \begin{tabular}{cccc}
 \toprule
-$MHD_{hor}$ & $MHD_{ver}$ & $average$ & $Relative \; Error$       \\
+$\Delta_B^x\;[T]$ & $\Delta_B^y\;[T]$ & $\langle \Delta_B \rangle\;[T]$ & $\Delta_{\text{rel}}$       \\
 \midrule
-\rowcolor{gray!6} 0.007 T & 0.052 T & 0.0295 T & 0.1035087719\\
+\rowcolor{gray!6} 0.007  & 0.052  & 0.0295  & 0.1035087719\\
 \bottomrule
 \end{tabular}}
 \end{table}
 
-In the following sections, we will use the product between the relative error and the measured value of B as the error to be associated to the magnetic field, unless the propagation using the calibration curve yields a larger value. 
+From now on the error assigned to the magnetic field will be $\Delta_B=B\Delta_{\text{rel}}$, unless the error propagation derived from the calibration curve yields a larger value. 
+
+\clearpage
 
 \end{document}

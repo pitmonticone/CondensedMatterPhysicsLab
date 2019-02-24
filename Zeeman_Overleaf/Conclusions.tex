@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt,abstracton]{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
+\usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{pifont}% http://ctan.org/pkg/pifont
@@ -37,10 +38,44 @@
 \renewcommand{\nomname}{List of Symbols}
 \renewcommand{\nompreamble}{The following list explains the symbols used within the body of the report.}
 
+
 \begin{document}
 
-\section{Introduction}
-\subsection{Theoretical Introduction}
-\subsection{Experimental Introduction}
+
+
+
+
+\begin{table}[H]
+\caption{}
+\centering
+\resizebox{10cm}{!}{
+\begin{tabular}{cccc}
+\toprule
+$\langle \mu_B \rangle \;[\text{JT}^{-1}]$ & $\boldsymbol{\mu_B} \;[\text{JT}^{-1}]$ & $Z$ & Compatibility  \\
+\midrule
+\rowcolor{gray!6} $9.79 \pm 1.27 \times 10^{-24}$ & $9.27 \times 10^{-24}$ & 0.41 & \checkmark \\
+\bottomrule
+\end{tabular}}
+\label{table:Zan}
+\end{table}
+
+
+\begin{table}[H]
+\caption{}
+\centering
+\resizebox{10cm}{!}{
+\begin{tabular}{cccc}
+\toprule
+$\langle \mu_B \rangle \;[\text{JT}^{-1}]$ & $\boldsymbol{\mu_B} \;[\text{JT}^{-1}]$ & $Z$ & Compatibility  \\
+\midrule
+\rowcolor{gray!6} $9.79 \pm 1.27 \times 10^{-24}$ & $9.27 \times 10^{-24}$ & 0.41 & \checkmark \\
+\bottomrule
+\end{tabular}}
+\label{table:ZanT}
+\end{table}
+
+we observed a residual magnetization of about 6 mT of the magnets in absence of current in the coils. This residual magnetization could have been the cause of the incompatibility of the overall average and the single parameters. despite the residual magnetization, that seemed to disappear from one day to another, this seemed the best method to estimate the calibration curve.
+
+
 
 \end{document}
