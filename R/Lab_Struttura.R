@@ -270,7 +270,7 @@ Z_n <- (Mnt-Mnl)/sqrt(dMnt^2+dMnl^2) # 0.1969
 
 # NORMAL WEIGHTED AVG 
 
-Mn <- c( ((Mnl)/((dMnl)^2) + (Mnt)/((dMnt)^2)) /((1/dMnl^2)+(1/dMnt^2))  ,   sqrt(dMnt^2 + dMnl^2)) # 9.785810e-24 pm 1.270314e-24
+Mn <- c( ((Mnl)/((dMnl)^2) + (Mnt)/((dMnt)^2)) /((1/dMnl^2)+(1/dMnt^2))  ,   sqrt((1)/((1/dMnt^2) + (1/dMnl^2)))) # 9.785810e-24 0.6349533e-24
 # NORMAL-THEORETICAL COMPATIBILITY
 
 ZnT <- (9.27*10^(-24)-Mn[1])/(Mn[2]) # -0.4060495
@@ -287,6 +287,25 @@ errb <- 0.171
 Matb <- (b*h*c)/(ma*t)
 dMatb <- errb*(h*c)/(ma*t)  ## 3.192396e-24 pm 7.798568e-24
 
+# ZAL
+k <- 0.737
+errk <- 0.433
+Malk <- (k*h*c)/(ma*t)
+dMalk <- errk*(h*c)/(ma*t) # 33.61137e-24 pm 19.74725e-24
+
+Z_a <- (Matb-Malk)/sqrt(dMatb^2+dMalk^2) # -1.432736
+
+Ma <- c( ((Malk)/((dMalk)^2) + (Matb)/((dMatb)^2)) /((1/dMalk^2)+(1/dMatb^2))  ,    sqrt((1)/((1/dMatb^2) + (1/dMalk^2)))) # 7.296495e-24 pm 7.253427e-24
+
+M <- c( ((Ma[1])/((Ma[2])^2) + (Mn[1])/((Mn[2])^2)) /((1/Ma[2]^2)+(1/Mn[2]^2))  ,   sqrt((1)/((1/Ma[2]^2) + (1/Mn[2]^2)))) # 9.766880e-24 0.6325344e-24
+Z <- (9.27*10^(-24)-M[1])/M[2] # -0.7855378
+
+
+
+
+
+
+
 # ZATBS
 i <- 0.202
 erri <- 0.057
@@ -297,7 +316,7 @@ dMat <- erri*(h*c)/(ma*t)  ## 9.212344e-24 pm 2.599523e-24
 k <- 0.737
 errk <- 0.433
 Malk <- (k*h*c)/(ma*t)
-dMalk <- errk*(h*c)/(ma*t) # 3.361137e-23 pm 1.974725e-23
+dMalk <- errk*(h*c)/(ma*t) # 33.61137e-24 pm 19.74725e-24
 
 #ZAL_APPROX
 j <- 0.130/0.644
@@ -311,9 +330,9 @@ dMal <- errj*(h*c)/(ma*t) # 9.206112e-24 pm 1.828817e-24
 Z_a <- (Mat-Mal)/sqrt(dMat^2+dMal^2) # -0.002
 
 # ANOMALOUS AVG 
-Ma <- c( ((Mal)/((dMal)^2) + (Mat)/((dMat)^2)) /((1/dMal^2)+(1/dMat^2))  ,   sqrt(dMat^2 + dMal^2)) # 9.208175e-24 pm 3.178378e-24
+Ma <- c( ((Mal)/((dMal)^2) + (Mat)/((dMat)^2)) /((1/dMal^2)+(1/dMat^2))  ,   sqrt((1)/((1/dMat^2) + (1/dMal^2)))) # 9.208175e-24 pm 1.495747e-24
 
-# NORMAL ANOMALOUS AVG - THEORETICAL COMPATIBILITY
+# ANOMALOUS AVG - THEORETICAL COMPATIBILITY
 
 ZaT <- (9.27*10^(-24)-Ma[1])/(Ma[2]) # 0.0194517
 
