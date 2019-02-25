@@ -61,7 +61,7 @@
 \maketitle
 \makenomenclature
 \begin{abstract}
-This experiment examined the normal and anomalous Zeeman effect with the aim of calculating the Bohr magneton by fitting the energy gap between spectral lines of a cadmium lamp immersed in a magnetic field, as a function of its magnitude. The first section concerns the magnet calibration and the procedure we adopted to test the magnetic field homogeneity. As far as the former is concerned, we expected the magnetic field to vary almost linearly with the current since we worked with soft ferromagnets. Regarding the latter, we have made sure that for small displacements in the region occupied by the cadmium lamp, the magnitude of the magnetic field did not vary substantially. Lastly, after the global experimental apparatus has been endowed with polarizing filters, a CCD camera and a retarding lamina, several images of the splitted spectral lines have been taken in various states depending from the chosen orientation (longitudinal or traversal) of the magnets with respect to the optical axe and the configuration of the polarizing filters placed along the light path. The results consist of four estimates of the Bohr magneton and the relevant compatibility tests .
+This experiment examined the normal and anomalous Zeeman effect with the aim of calculating the Bohr magneton by fitting the energy gap between spectral lines of a cadmium lamp immersed in a magnetic field, as a function of its magnitude. The first section concerns the magnet calibration and the procedure we adopted to test the magnetic field homogeneity. As far as the former is concerned, we expected the magnetic field to vary almost linearly with the current since we worked with soft ferromagnets. Regarding the latter, we measured how the magnitude of the magnetic field varied for small displacements in the region occupied by the cadmium lamp. Lastly, after the global experimental apparatus has been endowed with polarizing filters, a CCD camera and a retarding lamina, several images of the splitted spectral lines have been taken in various states depending from the chosen orientation (longitudinal or traversal) of the magnets with respect to the optical axis and the configuration of the polarizing filters placed along the light path. The results consist of four estimates of the Bohr magneton and the relevant compatibility tests.
 \end{abstract}
 \clearpage
 \tableofcontents
@@ -74,95 +74,92 @@ This experiment examined the normal and anomalous Zeeman effect with the aim of 
 \nomenclature[P]{$e$}{Electronic Charge}
 \nomenclature[P]{$\mu_B$}{Bohr Magneton}
 \nomenclature[P]{$h$}{Plack Constant}
-
-
-
-\nomenclature[T]{$\vec{B}$}{Magnetic Field}
-\nomenclature[T]{${B}=|\vec{B}|$}{Magnetic Field Magnitude}
+\nomenclature[P]{$c$}{Speed of Light in the Vacuum}
+\nomenclature[T]{$\vec{B}$}{Magnetic Induction}
 \nomenclature[T]{$I$}{Electric Current}
 \nomenclature[T]{$\mu_{X\in\{N,A\}}^{Y\in\{T,L\}}$}{Magnetic Moment in $(X,Y)$}
 \nomenclature[T]{$g$}{Gyromagnetic Factor}
 \nomenclature[T]{$g_{q\in\{n,a\}}$}{\say{Normal}/\say{Anomalous} Gyromagnetic Factor}
-} % FINIRE MERDE!!!
+\nomenclature[T]{$w$}{Fabry-Perot Interferometer Thickness}
+
+} 
 \clearpage
 \setlength{\columnsep}{27pt} 
-\begin{multicols}{2}
 \printnomenclature
-\end{multicols}
 \newpage
 
 \section{Theoretical Introduction}\label{sec: ThIntro}
-Zeemann effect is a phenomenon where the submission of a spectroscopic light source to a magnetic fields causes the splitting of the observed spectral lines. Because a spectral line is associated to an atomic energy level, such splitting is always related to a degeneracy breaking. In an atom, degeneracy is due to the orbital momentum l, its third component $m_l$, and the z-component of spin $m_s$ (s is fixed  because electrons are fermions, so $s=\frac{1}{2}$.\newline
-Normal Zeemann effect is observed when the total spins of the base and target level of the transition are zero.
-Anomalous Zeeman effect is instead detected when the spins of the base and target level of the transition are not zero.
-\subsection{Normal Zeemann effect}
+The Zeeman effect is a phenomenon where the immersion of a spectroscopic light source in a magnetic field causes the splitting of the observed spectral lines. Since a spectral line is associated to an atomic energy level, the splitting is always related to a degeneracy breaking mechanism. In an atom, degeneracy is due to the orbital angular momentum quantum number $\ell$, its third component $m_\ell$ and the spin $m_s$ ($s=1/2$ is fixed  because electrons are fermions) .
+\begin{itemize}
+    \item The normal Zeeman effect is observed when the total spins of the base and target level of the transition are zero.
+    \item The anomalous Zeeman effect is instead detected when the spins of the base and target level of the transition are not zero.
+\end{itemize}
+\subsection{Normal Zeeman effect}
 An external magnetic field $\vec{B}$ gives an energy contribution to each level
 \begin{equation}
 \Delta E = - \vec{\mu} \cdot \vec{B}
 \end{equation}
 Where $\vec{\mu}$ is the magnetic moment. We consider $\vec{B}$ parallel to the z-axis, so we are only interested in $\mu_z$. One finds: 
 \begin{equation}
-mu_z \equiv -\frac{e}{2m}L_z = -\frac{e}{2m}\hbar m_lg_l
+\mu_z \equiv -\frac{e}{2m}L_z = -\frac{e}{2m}\hbar m_\ell g_\ell 
 \end{equation}
-Where $g_l$ is a constant equal to 1.Thus:
+Where $g_\ell$ (orbital gyromagnetic factor) is a constant equal to 1.Thus:
 \begin{equation}
-\Delta E = - \mu_z B = \frac{e \hbar}{2m} m_l B = \mu_B m_l B
+\Delta E = - \mu_z B = \frac{e \hbar}{2m} m_\ell B = \mu_B m_\ell B
 \end{equation}
-Where $\mu_B$ is the Bohr's magneton, whose theoretical value is
-$\mu_B = $. Because $\Delta E$ depends on $m_l$, degeneracy in $m_l$ is broken and thus spectral lines split.
-\subsection{Anomalous Zeemann Effect}
+Where $\mu_B$ is the Bohr magneton, whose theoretical value is
+$\mu_B = 9.27 \times 10^{-24}$ JT$^{-1}$. Since $\Delta E$ depends on $m_\ell$, degeneracy in $m_\ell$ is broken and thus spectral lines split.
+\subsection{Anomalous Zeeman Effect}
 When spin is involved, the expression for $\vec{\mu}$ to use is 
 \begin{equation}
-\vec{\mu}=-\frac{eg_l}{2m} \vec{L}_J - \frac{eg_s}{2m} \vec{S}_J
+\vec{\mu}=-\frac{eg_\ell}{2m} \vec{L}_J - \frac{eg_s}{2m} \vec{S}_J
 \end{equation}
 Where $\vec{L}_J$ and $ \vec{S}_J$ are the projections of $\vec{L}$ and $\vec{S}$ along the total angular momentum $\vec{J}:= \vec{L}+ \vec{S}$, and $g_s$ is about 2. One finds:
 \begin{equation}
-\vec{\mu} = -\frac{e}{2m}g_{jls}\vec{J}
+\vec{\mu} = -\frac{e}{2m}g_{j\ell s}\vec{J}
 \end{equation}
 Where 
 \begin{equation}
-g_{jls}=\frac{3j(j+1)-l(l+1)+s(s+1)}{2j(j+1)}
+g_{jls}=\frac{3j(j+1)-\ell(\ell+1)+s(s+1)}{2j(j+1)}
 \end{equation}
-Pointing $\vec{B}$ along the z-axis, we have $\mu_z =-\frac{e \hbar}{2m}g_{jls}m_j=-\mu_B g_{jls}m_j$, thus
+Pointing $\vec{B}$ along the $z$-axis, we have $\mu_z =-\frac{e \hbar}{2m}g_{j\ell s}m_j=-\mu_B g_{j\ell s}m_j$, thus
 \begin{equation}
-\Delta E = -\vec{\mu}\cdot \vec{B}= \mu_z B = \mu_Bg_{jls}m_j B
+\Delta E = -\vec{\mu}\cdot \vec{B}= \mu_z B = \mu_Bg_{j\ell s}m_j B
 \end{equation}
-When considering anomalous Zeemann effect, both spinorial and orbital degeneracy are broken, giving rise to even more splitting.
-\clearpage
-\section{Experimental Introduction}\label{ExpIntro}
-\subsection{Calibration \& Magnetic Field Homogeneity Test}
-\subsubsection{Apparatus}
-The apparatus is composed of two ferromagnetic-core electromagnetic expansions connected to a current generator, an amperometer ***insert amperometer type NO*** and a magnetometer ***insert magnetomenter name NO***.
-\subsubsection{Procedure}
-The first goal is to extrapolate from a series of measurements a B(I) relation, where B is the magnetic field and I the current flowing through the expansions. 
-Using the following circuit \footnote{The capacity C is large and it is there for safety reasons, should one accidentally induce a short-circuit.}
+When considering the anomalous Zeeman effect, both spinorial and orbital degeneracies are broken, giving rise to even more splitting.
+
+\section{Experimental Introduction}\label{sec: ExpIntro}
+
+\subsection{Apparatus}
+The apparatus consists of two electromagnetic components with ferromagnetic core connected to a current generator, an amperometer and a magnetometer as reresented by the circuit in \hyperref[fig: circuit]{Figure \ref*{fig: circuit}} \footnote{The capacity $C$ is large and it is there for safety reasons .}.
 \begin{figure}[H]
-\begin{center}
+\centering
 \includegraphics[trim=0cm 0cm 0cm 0cm,clip,width=7.5cm,keepaspectratio]{images/circuito.pdf} 
-\caption{circuital scheme used}
-\end{center} 
+\caption{}
+\label{fig: circuit}
 \end{figure}
-The current has been varied about 1A stepwise (read on the amperometer) and the magnetic field measured in the middle of the expansions. The current sequences $0A \longrightarrow 10A \longrightarrow 0A \longrightarrow 10A$ were performed.
-Then, by choosing a specific current value, the magnetic field has been measured at different positions between the expansions. This was needed on order to assign a more precise uncertainty to the values of B.
-\subsection{Zeeman Effects}
-\subsubsection{Apparatus}
-An optical bench endowed with a cadmium spectroscopic light source inserted between the electromagnets discussed above, a diaphragm, a Fabry-Perot interferometer, a wavelength filter, a polarizer, a retarding lamina and A CCD camera has been used. A particular wavelength $\lambda$ interval of the light coming from the source was selected via the filter before entering the interferometer. Because of the functioning of the Fabry-Perot interferometer an input wavelength is diffracted in a series of circular spectral lines. As the filter acts on an interval of $\lambda$,we could observe the splitting of a wavelength into two/three (normal logitudinal/transverse effect : see \ref{subsec:1}) or six/nine (longitudinal/transverse anomalous), without dealing with extra lines. The Fabry-Perot interferometer main characteristic is the following:\newline
-defined $$\delta = r^2_{n,a}-r^2_{n,b}$$ and $$\Delta = r^2_{n+1,a}-r^2_{n,a}$$  where $r_{n,a}$ is the radius of the n-th order spectral line corresponding to the wavelength a, we have that $\delta$ and $\Delta$ are approximately constant with respect to n and $\lambda$ when $a\simeq b$. Moreover, by geometric means, one finds that 
+
+An optical bench endowed with a cadmium spectroscopic light source inserted between the electromagnets discussed above, a diaphragm, a Fabry-Perot interferometer, a wavelength filter, a polarizer, a retarding lamina and a CCD camera has been used. A particular wavelength range  of the light coming from the source was selected via the filter before entering the interferometer. The Fabry-Perot interferometer enables the diffraction of an input wavelength in a series of circular spectral lines. As the filter acts on a wavelength range, we could observe the splitting of a wavelength into two or three \footnote{Normal logitudinal or transverse as described in \hyperref[subsec:procedure]{Procedure} .} or six or nine \footnote{Anomalous logitudinal or transverse as described in \hyperref[subsec:procedure]{Procedure} .}, without dealing with extra lines. The Fabry-Perot interferometer main characteristic is the following:\newline
+We have defined $$\delta = r^2_{n,a}-r^2_{n,b} \text{ and }\Delta = r^2_{n+1,a}-r^2_{n,a},$$ where $r_{n,a}$ is the radius of the $n^{\text{th}}$ order spectral line corresponding to the wavelength $a$. We know that $\delta$ and $\Delta$ are approximately constant with respect to $n$ and $\lambda$ as far as the same diffractogram is concerned. Moreover, by geometric means, one finds that 
 \begin{equation} \label{eq:1}
-\Delta E  = \frac{hc}{2\mu t} \frac{\delta}{\Delta}
+\Delta E  = \frac{hc}{2\mu w} \frac{\delta}{\Delta}
 \end{equation}
- where $\mu$ is the refracive index of the interferometer and t is its thickness. So one is able to calculate $\Delta E$ from the images acquired form the CCD camera.
-\subsubsection{Procedure} \label{subsec:1}
-The experimental procedures followed to observe the normal zeemann effect and the anomalous one were similar. The magnets could be rotated, giving rise to the possibility of perpendicular and longitudinal configurations (orientations are referred to the optical bench axis). When considering the former, output light was linearly polarized (one could choose to observe the 2 linear polarizations by rotating the axis of the polarizer, no retarding lamina needed); the latter returned circularly polarized light: the lamina was used in combinations with the polarizer. It is to be said that in longitudinal configuration a light component, namely the one that would have polarization parallel to propagation direction, disappeared.\newline
-Wavelength $643.847 nm$ corresponding to $3 ^{1}D_{2} \longrightarrow 2 ^{1}P_{1}$  transition was selected to observe normal zeeman effect, while wavelength $508.588 nm$ corresponding to $3 ^3S_1 \longrightarrow 2 ^3P_2$ was chosen to observe the anomalous one. \newline
+ where $\mu$ is the refracive index of the interferometer and $w$ is its thickness. So it is possible to calculate $\Delta E$ by analyzing the images acquired from the CCD camera.
+\subsection{Procedure} \label{subsec:procedure}
+The experimental procedures we have followed to observe the normal and the anomalous Zeeman effect are very similar. The magnets could be rotated, giving rise to the possibility of perpendicular and longitudinal configurations \footnote{The orientations are referred to the optical axis .}. When considering the former, the output radiation was linearly polarized \footnote{It's possible to choose to observe the 2 linear polarizations ($\pi$ and $\sigma$) by rotating the axis of the polarizer, no retarding lamina is needed .} ; the latter returned circularly polarized light: the lamina was used in combinations with the polarizer. It should be said that in longitudinal configuration the $\pi$ light component disappeared.\newline
+The wavelength $\sim 643$ nm corresponding to $3 ^{1}D_{2} \longrightarrow 2 ^{1}P_{1}$  transition was selected to observe the normal Zeeman effect, while the wavelength $\sim 508$ nm corresponding to $3\; ^3S_1 \longrightarrow 2\;^{3}P_2$ was chosen to observe the anomalous one. \newline
 At each value of the current flowing through the electromagnets three snapshots (diffractograms) of the CCD were taken: the first depicting all lines, the second and the third were retrieved after inserting the polarizer and selecting one polarization and the other. This was executed for both the normal and anomalous settings, in transverse and longitudinal configurations.\newline
-Thus for each value of current (i.e. for each value of magnetic field extrapolated from the B-I curve one got before) we had many values of $\delta \text{ and } \Delta $ (all we could get form the three CCD snapshots), whose averages were to be used to get $\Delta E$ from \ref{eq:1}. Measures of $\delta$ and $\Delta$ were taken on diffractograms using Motic Images Plus 3.0 software.
-Thus one ends up with four linear fits of $\Delta E \text{ vs } B$, from which we could get four estimates of $\mu_B$, that were then compared, averaged and compared with the theoretical value. According to $g_{jls} , \; m_l \text{ and } m_j$ values, we used $\Delta E = \mu_B B$ to fit normal zeemann effect data, and $\Delta E =\frac{1}{2} \mu_B B$ for the anomalous one.
+Thus for each value of current (i.e. for each value of magnetic field extrapolated from the $B-I$ curve one got before) we had many values of $\delta \text{ and } \Delta $ (all we could get form the three CCD snapshots), whose averages were to be used to get $\Delta E$ from \hyperref[eq:1]{Equation \ref*{eq:1}}. 
+Measures of $\delta$ and $\Delta$ were taken on diffractograms using Motic Images Plus 3.0 software. Thus one ends up with four linear fits of $\Delta E \text{ vs } B$, from which we could get four estimates of $\mu_B$, that were then compared, averaged and compared with the theoretical value. According to $g_{jls} , \; m_l \text{ and } m_j$ values, we used $\Delta E = \mu_B B$ to fit normal zeemann effect data, and $\Delta E =\frac{1}{2} \mu_B B$ for the anomalous one.
+\subsection{Uncertainty Assignment \& Approximation Method}
+The errors on $\langle \delta \rangle $ and $\langle \Delta \rangle $ have been calculated as the standard deviation which have been propagated to get the error on ${\langle \delta \rangle}/{\langle \Delta \rangle}$. 
+As far as the anomalous setting is concerned, it has not been possible to distinguish the spectral lines within the same order so to directly measure the values of $\delta$ and $\Delta$ we decided to adopt the following method: 
+from the $I=0$ diffractogram we have measured each spectral lines' thickness $\Delta r$. Given the hypothesis that the lines's thickness would have been conserved \footonote{See \hyperref[fig:approx]{Figure \ref*{fig:approx}} in the \hyperref[sec: appendix]{Appendix} .}, we added $\Delta r/2$ to the most internal one and subtracted $\Delta r/2$ to the most external one. The difference between these two values have been divided by the number of expected lines minus one.     
 \clearpage
 \section{Calibration}\label{sec:cal}
 
 \subsection{Data Collection}
-In order to calibrate the magnet it is necessary to establish the dependence of the magnetic field $B$ from the current $I$ injected in the coils. Therefore we gradually increased and then decreased $I$ as shown in \hyperref[table:BI1]{Table \ref*{table:BI1}}  and \hyperref[table:BI2]{ \ref*{table:BI2}} respectively. 
+In order to calibrate the magnet it is necessary to establish the dependence of the magnetic field $B$ from the current $I$ injected in the coils. Therefore we gradually increased and then decreased $I$ as shown in \hyperref[table:BI1]{Table \ref*{table:BI1}}  and \hyperref[table:BI2]{ \ref*{table:BI2}} respectively \footnote{Instrumental sensitivities: $\Delta I = \pm 0.02$ A ;  $\Delta B = \pm 0.001$ T .}. 
 
 \begin{table}[H]
 \centering
@@ -214,13 +211,12 @@ $I\;[A]$ & $B\;[T]$\\
 \end{tabular}}
 \end{tabular}
 \end{table}
+
 \begin{table}[H]
 \centering
 \caption{}
 \label{table:BI2}
 \begin{tabular}{c c}
-\addlinespace
-\addlinespace
 \resizebox{6cm}{!}{
 \begin{tabular}{cc}
 \toprule
@@ -268,13 +264,13 @@ $I\;[A]$ & $B\;[T]$\\
 For sufficiently high values of $I$ the magnet exhibits a non-linear response which constrains us to fit the datasets with both linear and parabolic models in different domains as shown in \hyperref[fig:BI1]{Figure \ref*{fig:BI1}}  and \hyperref[fig:BI2]{ \ref*{fig:BI2}} .
 $$
 \begin{cases}
-f(I)=\boldsymbol{a} I + \boldsymbol{b} \quad \forall I \leq 7.00 \pm 0.02 \text{ A} \\ \\
-g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.00 \pm 0.02 \text{ A}
+f(I)=\boldsymbol{a} I + \boldsymbol{b} \quad \forall I \leq 7.00  \text{ A} \\ \\
+g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.00 \text{ A}
 \end{cases}
-\;\;
+\qquad\quad
 \begin{cases}
-f(I)=\boldsymbol{p_0} I + \boldsymbol{p_1} \quad \forall I \leq 7.00 \pm 0.02 \text{ A} \\ \\
-g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.00 \pm 0.02 \text{ A}
+f(I)=\boldsymbol{p_0} I + \boldsymbol{p_1} \quad \forall I \leq 7.00  \text{ A} \\ \\
+g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.00  \text{ A}
 \end{cases}
 $$
 \begin{figure}[H]\hspace{-0.8cm}
@@ -286,13 +282,13 @@ $$
 \end{figure}
 $$
 \begin{cases}
-f(I)=\boldsymbol{a} I + \boldsymbol{b} \quad \forall I \leq 7.02 \pm 0.02 \text{ A} \\ \\
-g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.02 \pm 0.02 \text{ A}
+f(I)=\boldsymbol{a} I + \boldsymbol{b} \quad \forall I \leq 7.02  \text{ A} \\ \\
+g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.02  \text{ A}
 \end{cases}
-\;\;
+\qquad\quad
 \begin{cases}
-f(I)=\boldsymbol{p_0} I + \boldsymbol{p_1} \quad \forall I \leq 7.00 \pm 0.02 \text{ A} \\ \\
-g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.00 \pm 0.02 \text{ A}
+f(I)=\boldsymbol{p_0} I + \boldsymbol{p_1} \quad \forall I \leq 7.00 \text{ A} \\ \\
+g(I)= \boldsymbol{a_p}I^2 + \boldsymbol{b_p}I + \boldsymbol{c_p} \quad \forall I > 7.00 \text{ A}
 \end{cases}
 $$
 
@@ -319,24 +315,24 @@ It might be interesting to observe that, although the magnet we have worked with
     \caption{}
     \label{fig:calcurve}
 \end{figure}
-From now on the compatibility tests will be evaluated according to the following rules and will never be explicitly stated again in the entire work: 
+From now on the compatibility tests will be evaluated according to the following rules: 
 
 $$\begin{cases}
 Z=\frac{|y-x|}{\sqrt{\delta y^2+ \delta x^2}} \\\\
 Z_c = 1.96 \quad(\alpha=0.05) \\\\
-\text{Compatibility condition:}\quad Z < Z_c
+\text{Compatibility condition:}\quad Z < Z_c\; .
 \end{cases}
 $$
 
 \clearpage
-\section{Magnetic Field Homogeneity Test}
-As anticipated in the \hyperref[sec:Intro]{Introduction}, in order to assign a proper uncertainty to the magnitude of the magnetic field $B$, it is necessary to evaluate its uniformity between the expansions. Therefore we took five measures of $B$ along a chosen horizontal diameter $x$, which have been reported in \hyperref[table:disX]{Table \ref*{table:disX}} and other five along the vertical $y$ reported in \hyperref[table:disY]{Table \ref*{table:disY}}. The relevant scatterplots have been displayed in \hyperref[fig:disX]{Figure \ref*{fig:disX}} and \hyperref[fig:disY]{ \ref*{fig:disY}} respectively.
+\section{Magnetic Field Homogeneity Test}\label{sec: MagHom}
+As anticipated in the \hyperref[sec: ExpIntro]{Experimental Introduction}, in order to assign a proper uncertainty to the magnitude of the magnetic field $B$, it is necessary to evaluate its uniformity between the expansions. Therefore we took five measures of $B$ along a chosen horizontal diameter $x$, which have been reported in \hyperref[table:disX]{Table \ref*{table:disX}} and other five along the vertical $y$ reported in \hyperref[table:disY]{Table \ref*{table:disY}}. The relevant scatterplots have been displayed in \hyperref[fig:disX]{Figure \ref*{fig:disX}} and \hyperref[fig:disY]{ \ref*{fig:disY}} respectively \footnote{Instrumental sensitivities: $\Delta x = \Delta y = 0.05$ mm .}.
 
 \begin{table}[H]
 \centering
 \caption{}
 \label{table:disX}
-\resizebox{11cm}{!}{
+\resizebox{8cm}{!}{
 \begin{tabular}{ccc}
 \toprule
 $I\;[A]$ & $x$ [mm] & $B\;[T]$       \\
@@ -349,6 +345,12 @@ $I\;[A]$ & $x$ [mm] & $B\;[T]$       \\
  & 7.10 $\pm$ 0.05 & 0.278 $\pm$ 0.001 \\
 \rowcolor{gray!6}   & 10.23 $\pm$ 0.05 & 0.247 $\pm$ 0.001 \\
 \bottomrule
+\addlinespace
+\addlinespace
+\addlinespace
+\addlinespace
+\addlinespace
+
 \end{tabular}}
 \end{table}
 
@@ -382,7 +384,7 @@ $I\;[A]$ & $y$ [mm] & $B\;[T]$       \\
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[trim=3cm 4cm 3cm 15cm, clip,height=7cm,keepaspectratio]{plots/MagneticDishomogeneity.pdf}
+\includegraphics[trim=3cm 4cm 3cm 15cm, clip,height=8cm,keepaspectratio]{plots/MagneticDishomogeneity.pdf}
 \end{center}
 \caption{}
 \label{fig:disY}
@@ -396,7 +398,7 @@ Then we have computed the average of the semi-dispersions and the relative error
 \centering
 \caption{}
 \label{table:semi}
-\resizebox{8cm}{!}{
+\resizebox{5.8cm}{!}{
 \begin{tabular}{cccc}
 \toprule
 $\Delta_B^x\;[T]$ & $\Delta_B^y\;[T]$ & $\langle \Delta_B \rangle\;[T]$ & $\Delta_{\text{rel}}$       \\
@@ -410,11 +412,11 @@ From now on the error assigned to the magnetic field will be $\Delta_B=B\Delta_{
 
 \clearpage
 
-\section{Normal Zeeman Effect}
+\section{Normal Zeeman Effect}\label{sec: NZ}
 
 \subsection{Data Collection}
 
-The data regarding the transverse and longitudinal configurations have been collected and reported in \hyperref[table:znt]{Table \ref*{table:znt}} and \hyperref[table:znl]{ \ref*{table:znl}} respectively. The values of $B$ have been derived from those of $I$ in \hyperref[sec:cal]{Calibration Curve}, while $\frac{\langle \delta \rangle}{\langle \Delta \rangle}$ has been calculated as described in \hyperref[sec:ExpIntro]{Experimental Introduction}.
+The data regarding the transverse and longitudinal configurations have been collected and reported in \hyperref[table:znt]{Table \ref*{table:znt}} and \hyperref[table:znl]{ \ref*{table:znl}} respectively. The values of $B$ have been derived from those of $I$ in \hyperref[sec:cal]{Calibration Curve}, while $\frac{\langle \delta \rangle}{\langle \Delta \rangle}$ has been calculated as described in the \hyperref[sec: ExpIntro]{Experimental Introduction}. Since $I$ wasn't constant during the data collection procedure, $\Delta I=I\Delta_I^{\text{semi}}$, unless the instrumental sensitivity was larger .
 
 \subsection{Data Analysis \& Visualization}
 
@@ -439,7 +441,6 @@ The datasets concerning the transverse and longitudinal configurations have been
   \rowcolor{gray!6}  8.91 $\pm$ 0.02 & 0.596 $\pm$ 0.062 & 0.233 $\pm$ 0.006\\
   9.92 $\pm$ 0.02 & 0.641 $\pm$ 0.066 & 0.263 $\pm$ 0.009\\
   \bottomrule
-   \addlinespace
   \end{tabular}}
 \end{table}
 
@@ -455,7 +456,7 @@ The datasets concerning the transverse and longitudinal configurations have been
 \centering
 \caption{}
 \label{table:znl}
-\resizebox{12cm}{!}{
+\resizebox{8.5cm}{!}{
   \begin{tabular}{cccccc}
   \toprule
  $I\;[A]$ & $B\;[T]$ & $\frac{\langle \delta \rangle}{\langle \Delta \rangle}$ \\
@@ -477,10 +478,12 @@ The datasets concerning the transverse and longitudinal configurations have been
   \addlinespace
   \addlinespace
    \addlinespace
+     \addlinespace
+   \addlinespace
   \end{tabular}}
 \end{table}
 
-\begin{figure}[H]
+\hspace{-3cm}\begin{figure}[H]
     \centering
     \includegraphics[scale=0.85]{plots/znl.pdf}
     \caption{Longitudinal}
@@ -493,7 +496,7 @@ The datasets concerning the transverse and longitudinal configurations have been
 Now it is possible to calculate the Bohr magneton for both configurations $$\mu_N^T= (\boldsymbol{p_0^T}\pm \boldsymbol{\delta p_0^T})\frac{hc}{2g_n\mu_n w} \quad\text{and}\quad \mu_N^L= (\boldsymbol{p_0^L}\pm \boldsymbol{\delta p_0^L})\frac{hc}{2g_n\mu_n w}$$ 
  since we know 
 \begin{itemize}
-\item $h=6.626070040\times10^{-34} \text{ Js}  \;\,\quad\qquad\qquad\text{ Plack constant}$  
+\item $h=6.626070040\times10^{-34} \text{ Js}  \;\,\quad\qquad\qquad\text{ Planck constant}$  
 \item $c=299792458 \text{ ms}^{-1}  \quad\qquad\qquad\qquad\qquad\text{speed of light in the vacuum}$
 \item $g_n=1   \;\;\qquad\qquad\qquad\qquad\qquad\qquad\qquad\text{ gyromagnetic factor}$
 \item $\mu_n= 1.4560    \;\qquad\qquad\qquad\qquad\qquad\qquad\text{ refractive index}$
@@ -510,7 +513,7 @@ The compatibility between $\mu_N^T$ and $\mu_N^L$ has been tested as displayed i
 \toprule
 $\mu_N^T\;[\text{JT}^{-1}]$ & $\mu_N^L\;[\text{JT}^{-1}]$ & $Z$ & Compatibility  \\
 \midrule
-\rowcolor{gray!6} $9.91 \pm  0.91\times 10^{-24}$ & $9.66 \pm  0.89\times 10^{-24}$ & 0.20 & \checkmark \\
+\rowcolor{gray!6} $(9.91 \pm  0.91)\times 10^{-24}$ & $(9.66 \pm  0.89)\times 10^{-24}$ & 0.20 & \checkmark \\
 \bottomrule
 \end{tabular}}
 \label{table:Zn}
@@ -526,7 +529,7 @@ Since the result has been positive, we have calculated the weighted average $ \l
 \toprule
 $\langle \mu_N \rangle \;[\text{JT}^{-1}]$ & $\boldsymbol{\mu_B} \;[\text{JT}^{-1}]$ & $Z$ & Compatibility  \\
 \midrule
-\rowcolor{gray!6} $9.79 \pm 0.63 \times 10^{-24}$ & $9.27 \times 10^{-24}$ & 0.41 & \checkmark \\
+\rowcolor{gray!6} $(9.79 \pm 0.63) \times 10^{-24}$ & $9.27 \times 10^{-24}$ & 0.41 & \checkmark \\
 \bottomrule
 \end{tabular}}
 \label{table:ZnT}
@@ -534,11 +537,11 @@ $\langle \mu_N \rangle \;[\text{JT}^{-1}]$ & $\boldsymbol{\mu_B} \;[\text{JT}^{-
 
 \clearpage
 
-\section{Anomalous Zeeman Effect}
+\section{Anomalous Zeeman Effect}\label{sec: AZ}
 
 \subsection{Data Collection}
 
-The data regarding the transverse and longitudinal configurations have been collected and reported in \hyperref[table:zat]{Table \ref*{table:zat}} and \hyperref[table:zal]{ \ref*{table:zal}} respectively. The values of $B$ have been derived from those of $I$ in \hyperref[sec:cal]{Calibration Curve}, while $\frac{\langle \delta \rangle}{\langle \Delta \rangle}$ has been calculated as described in \hyperref[sec:ExpIntro]{Experimental Introduction}.
+The data regarding the transverse and longitudinal configurations have been collected and reported in \hyperref[table:zat]{Table \ref*{table:zat}} and \hyperref[table:zal]{ \ref*{table:zal}} respectively. The values of $B$ have been derived from those of $I$ in \hyperref[sec:cal]{Calibration Curve}, while $\frac{\langle \delta \rangle}{\langle \Delta \rangle}$ has been calculated as described in the \hyperref[sec: ExpIntro]{Experimental Introduction}.
 
 \subsection{Data Analysis \& Visualization}
 
@@ -595,10 +598,11 @@ The datasets concerning the transverse and longitudinal configurations have been
   \end{tabular}}
 \end{table}
 \begin{figure}[H]
-   \hspace{-1.7cm} \includegraphics[scale=0.95]{plots/zal.pdf}
+   \hspace{-0.5cm} \includegraphics[scale=0.85]{plots/zal.pdf}
     \caption{Longitudinal}
     \label{fig:zal}
 \end{figure}
+\clearpage
 
 \subsection{Bohr Magneton}
 Now it is possible to calculate the Bohr magneton for both configurations $$\mu_A^T= (\boldsymbol{p_0^T}\pm \boldsymbol{\delta p_0^T})\frac{hc}{2g_a\mu_a w} \quad\text{and}\quad \mu_A^L= (\boldsymbol{p_0^L}\pm \boldsymbol{\delta p_0^L})\frac{hc}{2g_a\mu_a w}$$ 
@@ -607,7 +611,7 @@ Now it is possible to calculate the Bohr magneton for both configurations $$\mu_
 \item $h=6.626070040\times10^{-34} \text{ Js}  \;\,\quad\qquad\qquad\text{ Plack constant}$  
 \item $c=299792458 \text{ ms}^{-1}  \quad\qquad\qquad\qquad\qquad\text{speed of light in the vacuum}$
 \item $g_a=1/2   \;\;\quad\qquad\qquad\qquad\qquad\qquad\qquad\text{ gyromagnetic factor}$
-\item $\mu_a= 1.4560    \;\qquad\qquad\qquad\qquad\qquad\qquad\text{ refractive index}$
+\item $\mu_a= 1.4519    \;\qquad\qquad\qquad\qquad\qquad\qquad\text{ refractive index}$
 \item  $w= 0.003 \text{ m} \;\qquad\qquad\qquad\qquad\qquad\qquad\text{thickness}$
 \item $\boldsymbol{p_0^{T}}=0.070 \pm 0.171 \;\text{T}^{-1}
 \;\quad\qquad\qquad\qquad\text{ transverse slope}$
@@ -623,7 +627,7 @@ The compatibility between $\mu_A^T$ and $\mu_A^L$ has been tested as displayed i
 \toprule
 $\mu_A^T\;[\text{JT}^{-1}]$ & $\mu_A^L\;[\text{JT}^{-1}]$ & $Z$ & Compatibility  \\
 \midrule
-\rowcolor{gray!6} $3.20 \pm 7.80\times 10^{-24}$ & $33.61 \pm 19.75$ & 1.43 & \checkmark \\
+\rowcolor{gray!6} $(3.20 \pm 7.80)\times 10^{-24}$ & $(33.61 \pm 19.75)$ & 1.43 & \checkmark \\
 \bottomrule
 \end{tabular}}
 \label{table:Za}
@@ -642,7 +646,7 @@ Then the compatibility test between $\langle \mu_A \rangle$ and $\langle \mu_N \
 \toprule
 $\langle \mu_A \rangle\;[\text{JT}^{-1}]$ & $\langle \mu_N \rangle\;[\text{JT}^{-1}]$ & $Z$ & Compatibility  \\
 \midrule
-\rowcolor{gray!6} $7.30 \pm 7.25\times 10^{-24}$ & $9.79 \pm 6.63$ & 0.34 & \checkmark \\
+\rowcolor{gray!6} $(7.30 \pm 7.25)\times 10^{-24}$ & $(9.79 \pm 6.63) \times 10^{-24}$ & 0.34 & \checkmark \\
 \bottomrule
 \end{tabular}}
 \label{table:Zan}
@@ -658,31 +662,79 @@ Since the result has been positive, we have calculated the global weighted avera
 \toprule
 $\langle \mu \rangle \;[\text{JT}^{-1}]$ & $\boldsymbol{\mu_B} \;[\text{JT}^{-1}]$ & $Z$ & Compatibility  \\
 \midrule
-\rowcolor{gray!6} $9.77 \pm  0.63 \times 10^{-24}$ & $9.27 \times 10^{-24}$ & 0.79 & \checkmark \\
+\rowcolor{gray!6} $(9.77 \pm  0.63) \times 10^{-24}$ & $9.27 \times 10^{-24}$ & 0.79 & \checkmark \\
 \bottomrule
 \end{tabular}}
 \label{table:Z}
 \end{table}
 
-
-\subsubsection{Alternative Method}
- \subsubsection{Approximation Methods}
-1. Observations of previous results 
-2. System of co-causes : 
-   2.1 Experimental limitations --> reduced resolutions of CCD --> indistinguishibility --> perceived width >> normal case --> Superpositions of light signals associated with different orders
-   2.2 Low accuracy of $\Delta r /2$ methods (image comparison) 
-   2.3 Large error on B due to \ref{sec: MagHom} 
-
-   HOMOGENEOUS TRIGONOMETRIC METHOD 
-
-
-\clearpage
-
-
 \section{Conclusions}
+We have analyzed two important phenomena concerning the cadmium energy level transitions: the normal and the anomalous Zeeman effects.  Then we have calibrated the apparatus and calculated the $(I,B)$ relation displayed in \hyperref[sec: cal]{Calibration}. The uncertainty $\Delta B $ has been computed taking into account the magnetic field dishomogeneity. There were many sources of errors: 
+\begin{itemize}
+    \item experimental limitations mostly represented by the reduced resolutions of CCD and large errors on B and delta.
+    \item in the anomalous setting, the data collection has been made quite problematic by the effective indistinguishability of peaks , the consequent overlap of many spectral lines and the non-negligible thickness of peaks (estimated without injected current). 
+\end{itemize}
+For these reasons,in order to estimate the lines' position we adopted an approximation method (described in detail in the \hyperref[sec: ExpIntro]{Experimental Introduction}) which inevitably amplified the uncertainty on the fit parameters and therefore on the Bohr magneton. However we obtained four estimates of the magneton so that all the relevant compatibility tests (among them and with the theoretically expected value) yielded positive results. This allowed us to compute the weighted average representing our most reliable estimate.
+\clearpage
+\section{Appendix}\label{sec: appendix}
+The diffractograms are arranged according to the following rule: 
+$$
+\begin{tabular}{l l}
+\textbf{Normal Transverse} &\hspace{1cm} \textbf{Normal Longitudinal} \\ \\ 
+\textbf{Anomalous Transverse}  &\hspace{1cm} \textbf{Anomalous Longitudinal} 
+\end{tabular}
+$$
 
-\section{Appendix}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+      \includegraphics[height=6cm,keepaspectratio]{images/z0.png} & \includegraphics[height=6cm,keepaspectratio]{images/zl0.png} \\\\
+      \includegraphics[width=7.5cm,keepaspectratio]{images/za0.png} & \includegraphics[height=6cm,keepaspectratio]{images/zal0.png} \\
+      \end{tabular}
+    \caption{$I=0$ A }
+    \label{fig:B0}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+      \includegraphics[height=6cm,keepaspectratio]{images/zn5.png} & \includegraphics[height=6cm,keepaspectratio]{images/znl8.png} \\
+      \includegraphics[width=7.5cm,keepaspectratio]{images/za4.png} & \includegraphics[height=6cm,keepaspectratio]{images/zal5.png} \\
+      \end{tabular}
+    \caption{No Polarization }
+    \label{fig:np}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+      \includegraphics[height=6cm,keepaspectratio]{images/zna5.png} & \includegraphics[height=6cm,keepaspectratio]{images/znla8.png} \\
+      \includegraphics[width=7.5cm,keepaspectratio]{images/zaa4.png} & \includegraphics[height=6cm,keepaspectratio]{images/zala5.png} \\
+      \end{tabular}
+    \caption{Polarization $\sigma$ in Transverse and $\sigma^{-}$ in Longitudinal}
+    \label{fig:pa}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+      \includegraphics[height=6cm,keepaspectratio]{images/znb5.png} & \includegraphics[height=6cm,keepaspectratio]{images/znlb8.png} \\
+      \includegraphics[width=7.5cm,keepaspectratio]{images/zab4.png} & \includegraphics[height=6cm,keepaspectratio]{images/zalb5.png} \\
+      \end{tabular}
+    \caption{Polarization $\pi$ in Transverse and $\sigma^{+}$ in Longitudinal}
+    \label{fig:pb}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+   \includegraphics[scale=0.2]{images/confrontoZAL.png}
+    \caption{Approximation Method}
+    \label{fig:approx}
+\end{figure}
 
 %\bibliographystyle{unsrt}
 %\bibliography{biblio}
+
+
+
 \end{document}
