@@ -299,6 +299,18 @@ errp <- sqrt((errnum/(0.644))^2+(0.130*errden/(0.644^2))^2)
 mB <- (p*h*c)/(ma*t)
 errmB <- errp*(h*c)/(ma*t)  # 9.206112e-24 pm 1.565873e-24
 
+# BOHR MAGNETON [ZAL,approx.]
+h <- 6.626070040*(10^(-34))
+c <- 299792458
+ma <- 1.4519
+t <- 0.003
+p <- 0.147/0.620
+errnum <- 0.022
+errden <- 0.064
+errp <- sqrt((errnum/(0.620))^2+(0.147*errden/(0.620^2))^2)
+mB <- (p*h*c)/(ma*t)
+errmB <- errp*(h*c)/(ma*t)  # 10.81296e-24 pm 1.965867e-24
+
 
 
 # BOHR MAGNETON [ZAT]
